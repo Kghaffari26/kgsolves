@@ -425,3 +425,24 @@ html:has([data-header-overlay]) .site-header[data-top="true"] {
     transform: translateY(100%);
   }
 }
+
+/* ---- Form success --------------------------------------------------------- */
+@media (prefers-reduced-motion: no-preference) {
+  .form-success {
+    animation: hero-fade 0.7s var(--ease-out) both;
+  }
+  .form-success .success-ring,
+  .form-success .success-check {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: draw-stroke 0.9s var(--ease-out) forwards;
+  }
+  .form-success .success-check {
+    animation-delay: 0.45s;
+  }
+}
+@keyframes draw-stroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

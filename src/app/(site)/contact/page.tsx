@@ -3,7 +3,7 @@ import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { RevealText } from "@/components/motion/RevealText";
 import { PhoneLink } from "@/components/layout/PhoneLink";
-import { StartProjectSlot } from "./StartProjectSlot";
+import { StartProjectForm } from "@/components/forms/StartProjectForm";
 import { getSiteSettings } from "@/lib/sanity/api";
 import { buildMetadata } from "@/lib/seo/metadata";
 import { serviceAreas } from "@/lib/site";
@@ -58,7 +58,7 @@ export default async function ContactPage() {
           </div>
 
           <div className="lg:col-span-6 lg:col-start-7">
-            <StartProjectSlot />
+            <StartProjectForm />
           </div>
         </div>
 

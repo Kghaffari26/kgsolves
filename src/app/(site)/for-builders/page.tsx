@@ -8,7 +8,7 @@ import { PageHero } from "@/components/sections/PageHero";
 import { FadeUp } from "@/components/motion/FadeUp";
 import { Button } from "@/components/ui/Button";
 import { PhoneLink } from "@/components/layout/PhoneLink";
-import { PlanUploadSlot } from "./PlanUploadSlot";
+import { PlanUploadForm } from "@/components/forms/PlanUploadForm";
 import { getSiteSettings } from "@/lib/sanity/api";
 import { buildMetadata } from "@/lib/seo/metadata";
 
@@ -135,7 +135,7 @@ export default async function ForBuildersPage() {
             PDF or DWG, multiple files, 50 MB total. We&rsquo;ll confirm receipt and the quote.
           </p>
           <div className="mt-12">
-            <PlanUploadSlot />
+            <PlanUploadForm uploadsEnabled={Boolean(process.env.BLOB_READ_WRITE_TOKEN)} />
           </div>
         </Container>
       </section>
