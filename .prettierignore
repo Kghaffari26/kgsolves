@@ -1,0 +1,9 @@
+.next
+node_modules
+package-lock.json
+public
+assets
+qa
+playwright-report
+test-results
+.lighthouseci
