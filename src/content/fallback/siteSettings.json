@@ -1,0 +1,27 @@
+{
+  "companyName": "JM Kelley Inc.",
+  "legalName": "Kelley JM Builders Inc",
+  "phone": "949-873-0740",
+  "email": null,
+  "streetAddress": null,
+  "city": "Newport Beach",
+  "region": "CA",
+  "postalCode": null,
+  "hours": [
+    { "days": "Monday – Friday", "hours": "8am – 5pm" },
+    { "days": "Saturday – Sunday", "hours": "Closed" }
+  ],
+  "openingHours": ["Mo-Fr 08:00-17:00"],
+  "license": { "number": "1065986", "verified": false, "board": "CSLB" },
+  "insuranceStatement": null,
+  "social": [
+    { "label": "Instagram", "url": null },
+    { "label": "Houzz", "url": null },
+    { "label": "LinkedIn", "url": null }
+  ],
+  "stats": [
+    { "label": "Years in business", "value": null, "verified": false },
+    { "label": "Homes built", "value": null, "verified": false },
+    { "label": "Structures poured and framed in-house", "value": null, "verified": false }
+  ]
+}
