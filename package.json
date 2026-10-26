@@ -38,6 +38,7 @@
     "resend": "^6.34.1",
     "sanity": "^6.20.0",
     "server-only": "^0.0.1",
+    "sharp": "^0.35.5",
     "styled-components": "^6.6.0",
     "zod": "^4.6.7"
   },
@@ -52,7 +53,6 @@
     "eslint-config-next": "16.4.3",
     "prettier": "^3.9.10",
     "prettier-plugin-tailwindcss": "^0.8.1",
-    "sharp": "^0.35.5",
     "tailwindcss": "^4",
     "tsx": "^4.23.15",
     "typescript": "^5"

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { buildMetadata } from "@/lib/seo/metadata";
 import { VideoHero } from "@/components/sections/home/VideoHero";
 import { Positioning } from "@/components/sections/home/Positioning";
 import { FoundationUp } from "@/components/sections/home/FoundationUp";
@@ -16,10 +17,13 @@ import {
   getTestimonials,
 } from "@/lib/sanity/api";
 
-export const metadata: Metadata = {
-  title: { absolute: "JM Kelley Inc. — Newport Beach Builder | Concrete, Framing & Custom Homes" },
-  alternates: { canonical: "/" },
-};
+export const metadata: Metadata = buildMetadata({
+  title: "Coastal Homes, Built From the Foundation Up",
+  description:
+    "JM Kelley Inc. is a Newport Beach general contractor that pours and frames its own projects: custom homes, remodels, ADUs, structural concrete and framing across coastal Orange County.",
+  path: "/",
+  image: "/images/projects/4-fairway-point/hero.jpg",
+});
 
 export default async function HomePage() {
   const [settings, featured, services, testimonials, fairway] = await Promise.all([
