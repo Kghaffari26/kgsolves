@@ -31,11 +31,7 @@ export type VideoEmbedSource = {
 };
 
 export type CitySlug =
-  | "newport-beach"
-  | "newport-coast"
-  | "corona-del-mar"
-  | "costa-mesa"
-  | "huntington-beach";
+  "newport-beach" | "newport-coast" | "corona-del-mar" | "costa-mesa" | "huntington-beach";
 
 export type ProjectType = "new-home" | "remodel" | "adu" | "multi-unit" | "commercial";
 

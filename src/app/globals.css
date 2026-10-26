@@ -1,1 +1,283 @@
 @import "tailwindcss";
+
+/* ---------------------------------------------------------------------------
+   "Raw to refined" design tokens.
+   Raw palette first, then semantic roles that sections can re-map
+   (.theme-dark, .theme-stone). Tailwind reads them through @theme below,
+   so `bg-ink`, `text-fg`, `border-rule` etc. all resolve to these variables.
+--------------------------------------------------------------------------- */
+:root {
+  --ink: #0f1b2d;
+  --ink-2: #16253b;
+  --limestone: #e9e2d6;
+  --sand: #cdbfa8;
+  --timber: #b5793f;
+  /* timber darkened for text on light grounds (5.3:1 on paper) */
+  --timber-deep: #8a5527;
+  /* timber lifted for text on ink (6.4:1) */
+  --timber-light: #d39a62;
+  --paper: #faf8f4;
+  --charcoal: #2a2a2a;
+  --line: rgba(15, 27, 45, 0.12);
+
+  /* semantic (light default) */
+  --bg: var(--paper);
+  --fg: var(--charcoal);
+  --fg-strong: var(--ink);
+  --fg-muted: #5b6270;
+  --rule: var(--line);
+  --accent: var(--timber);
+  --accent-text: var(--timber-deep);
+  --surface: #ffffff;
+  --focus: var(--timber-deep);
+
+  /* layout */
+  --max-w: 90rem; /* 1440 */
+  --gutter: clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
+  --grid-gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
+  --section-y: clamp(5rem, 2.5rem + 8vw, 12.5rem); /* 80 → 200px */
+  --section-y-sm: clamp(3.5rem, 2rem + 5vw, 7.5rem);
+  --header-h: 4.5rem;
+
+  /* motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 200ms;
+  --dur: 450ms;
+  --dur-slow: 900ms;
+}
+
+/* Dark section variant: ink ground, paper type, lifted timber. */
+.theme-dark {
+  --bg: var(--ink);
+  --fg: #d8d3ca;
+  --fg-strong: var(--paper);
+  --fg-muted: #a3abb8;
+  --rule: rgba(250, 248, 244, 0.16);
+  --accent: var(--timber-light);
+  --accent-text: var(--timber-light);
+  --surface: var(--ink-2);
+  --focus: var(--timber-light);
+}
+
+/* Warm neutral section variant. */
+.theme-stone {
+  --bg: var(--limestone);
+  --fg: var(--charcoal);
+  --fg-strong: var(--ink);
+  --fg-muted: #555b66;
+  --rule: rgba(15, 27, 45, 0.16);
+  --surface: var(--paper);
+}
+
+.theme-dark,
+.theme-stone {
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-limestone: var(--limestone);
+  --color-sand: var(--sand);
+  --color-timber: var(--timber);
+  --color-timber-deep: var(--timber-deep);
+  --color-timber-light: var(--timber-light);
+  --color-paper: var(--paper);
+  --color-charcoal: var(--charcoal);
+  --color-line: var(--line);
+
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-fg-strong: var(--fg-strong);
+  --color-fg-muted: var(--fg-muted);
+  --color-rule: var(--rule);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-surface: var(--surface);
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+
+  --ease-out-expo: var(--ease-out);
+}
+
+@theme {
+  /* Fluid type scale. Display tops out at 9rem on wide desktops. */
+  --text-display: clamp(3.25rem, 1.2rem + 8vw, 9rem);
+  --text-display--line-height: 0.94;
+  --text-display--letter-spacing: -0.025em;
+  --text-h1: clamp(2.75rem, 1.5rem + 4.8vw, 6.5rem);
+  --text-h1--line-height: 0.98;
+  --text-h1--letter-spacing: -0.02em;
+  --text-h2: clamp(2.25rem, 1.4rem + 3.2vw, 4.5rem);
+  --text-h2--line-height: 1.02;
+  --text-h2--letter-spacing: -0.018em;
+  --text-h3: clamp(1.625rem, 1.25rem + 1.4vw, 2.5rem);
+  --text-h3--line-height: 1.1;
+  --text-h3--letter-spacing: -0.01em;
+  --text-h4: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --text-h4--line-height: 1.2;
+  --text-lead: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
+  --text-lead--line-height: 1.5;
+  --text-body: 1.0625rem;
+  --text-body--line-height: 1.65;
+  --text-small: 0.875rem;
+  --text-small--line-height: 1.5;
+  --text-eyebrow: 0.75rem;
+  --text-eyebrow--line-height: 1.2;
+  --text-eyebrow--letter-spacing: 0.18em;
+
+  --breakpoint-3xl: 112rem;
+}
+
+/* --------------------------------------------------------------------------- */
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+  body {
+    background-color: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    color: var(--fg-strong);
+    font-family: var(--font-display);
+    font-weight: 380;
+    font-optical-sizing: auto;
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  ::selection {
+    background: var(--timber);
+    color: var(--paper);
+  }
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+  /* Respect the OS setting everywhere, including third-party CSS animations. */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: var(--max-w);
+    margin-inline: auto;
+    padding-inline: var(--gutter);
+  }
+  /* 12-column editorial grid (4 on phones, 8 on tablets). */
+  .grid-editorial {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    column-gap: var(--grid-gap);
+  }
+  @media (min-width: 48rem) {
+    .grid-editorial {
+      grid-template-columns: repeat(8, minmax(0, 1fr));
+    }
+  }
+  @media (min-width: 64rem) {
+    .grid-editorial {
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+    }
+  }
+  .section-y {
+    padding-block: var(--section-y);
+  }
+  .section-y-sm {
+    padding-block: var(--section-y-sm);
+  }
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: var(--text-eyebrow);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  /* Animated underline for text links. */
+  .link-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size var(--dur) var(--ease-out);
+  }
+  .link-underline:hover,
+  .link-underline:focus-visible {
+    background-size: 100% 1px;
+  }
+  .prose-site p + p {
+    margin-top: 1.1em;
+  }
+  .prose-site h2 {
+    font-size: var(--text-h3);
+    line-height: 1.1;
+    margin-top: 2.2em;
+    margin-bottom: 0.6em;
+  }
+  .prose-site ul {
+    list-style: disc;
+    padding-left: 1.25em;
+    margin-top: 1em;
+  }
+  .prose-site li + li {
+    margin-top: 0.4em;
+  }
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+.lenis [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+/* Reduced-motion swaps that must not wait for JS (no flash). */
+@media (prefers-reduced-motion: reduce) {
+  .motion-only {
+    display: none !important;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .reduced-only {
+    display: none !important;
+  }
+}
+
+/* Hide scrollbars on horizontal swipers while keeping them scrollable. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
