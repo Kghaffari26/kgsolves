@@ -1,11 +1,10 @@
-"use client";
-
-import { useRef, type ElementType } from "react";
-import { useReveal } from "@/lib/motion/useReveal";
+import type { ElementType } from "react";
 
 /**
- * Line-by-line mask reveal. Pass lines explicitly (array) for exact control over breaks;
- * a plain string is treated as one line per "\n". Screen readers read the sr-only copy once.
+ * Page-title intro: each line rises out of its own mask on first paint. Pure CSS (no JS, no
+ * waiting on hydration), so titles at the top of a page never delay LCP. Pass one string per
+ * line for exact breaks. Screen readers read the sr-only copy once. Static under reduced motion.
+ * (Headings further down the page use the SplitText scroll reveal instead; see MotionDirector.)
  */
 export function RevealText({
   as,
@@ -16,17 +15,15 @@ export function RevealText({
   children: string | string[];
   className?: string;
 }) {
-  const ref = useRef<HTMLElement>(null);
-  useReveal(ref);
   const Tag = (as ?? "p") as ElementType;
   const lines = Array.isArray(children) ? children : children.split("\n");
   return (
-    <Tag ref={ref} className={className}>
+    <Tag className={className}>
       <span className="sr-only">{lines.join(" ")}</span>
       {lines.map((line, i) => (
         <span
           key={i}
-          className="reveal-line"
+          className="intro-line"
           aria-hidden
           style={{ "--line": i } as React.CSSProperties}
         >

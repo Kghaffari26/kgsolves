@@ -22,9 +22,9 @@ export function Footer({ settings }: { settings: SiteSettings }) {
   const buildYear = new Date().getFullYear();
   return (
     <footer className="theme-dark relative overflow-hidden">
-      <Container className="pt-[var(--section-y)]">
+      <Container data-uncover className="pt-[var(--section-y)]">
         <p className="eyebrow text-fg-muted">Start a project</p>
-        <h2 className="mt-6 max-w-[14ch] font-display text-display text-fg-strong">
+        <h2 data-split className="mt-6 max-w-[14ch] font-display text-display text-fg-strong">
           Let&rsquo;s build something that lasts.
         </h2>
         <div className="mt-10 flex flex-wrap items-center gap-6">

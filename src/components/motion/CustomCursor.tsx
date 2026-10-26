@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useFinePointer, useReducedMotion } from "@/lib/motion/useReducedMotion";
 
 /**
@@ -14,6 +15,13 @@ export function CustomCursor() {
   const reduced = useReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const [label, setLabel] = useState<string | null>(null);
+  // A route change swaps the element under the pointer; drop any stale label.
+  const pathname = usePathname();
+  const [lastPath, setLastPath] = useState(pathname);
+  if (pathname !== lastPath) {
+    setLastPath(pathname);
+    setLabel(null);
+  }
   const enabled = fine && !reduced;
 
   useEffect(() => {

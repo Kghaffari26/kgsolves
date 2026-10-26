@@ -12,11 +12,17 @@ const sizes = {
 type Props = ComponentPropsWithoutRef<"h2"> & {
   as?: "h1" | "h2" | "h3" | "h4" | "p";
   size?: keyof typeof sizes;
+  /** line-mask reveal on scroll (MotionDirector); on by default */
+  split?: boolean;
 };
 
-export function Heading({ as: Tag = "h2", size, className, ...rest }: Props) {
+export function Heading({ as: Tag = "h2", size, split = true, className, ...rest }: Props) {
   const resolved = size ?? (Tag === "p" ? "h2" : Tag);
   return (
-    <Tag className={cn("font-display text-fg-strong", sizes[resolved], className)} {...rest} />
+    <Tag
+      data-split={split || undefined}
+      className={cn("font-display text-fg-strong", sizes[resolved], className)}
+      {...rest}
+    />
   );
 }

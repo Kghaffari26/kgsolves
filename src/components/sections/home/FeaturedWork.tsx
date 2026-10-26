@@ -26,7 +26,7 @@ export function FeaturedWork({ projects }: { projects: Project[] }) {
         {projects.map((p) => (
           <li
             key={p.slug}
-            className="w-[82vw] shrink-0 snap-start sm:w-[58vw] lg:w-[38vw] xl:w-[34vw]"
+            className="w-[82vw] shrink-0 snap-start sm:w-[58vw] lg:w-[38vw] lg:[--ps:1.16] motion-reduce:lg:[--ps:1] xl:w-[34vw]"
             data-card
           >
             <ProjectCard project={p} sizes="(min-width: 1024px) 38vw, 82vw" aspect="aspect-[4/5]" />

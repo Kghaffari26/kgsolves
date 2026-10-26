@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ViewTransition } from "react";
 import { HoverVideo } from "@/components/media/HoverVideo";
 import { Todo } from "@/components/ui/Todo";
 import { projectTypeLabels } from "@/lib/site";
@@ -31,17 +32,19 @@ export function ProjectCard({
         className="block focus-visible:outline-offset-4"
         aria-label={`${project.title}, ${project.location}`}
       >
-        <div className={cn("relative overflow-hidden bg-sand", aspect)}>
-          <Image
-            src={project.heroImage.src}
-            alt={project.heroImage.alt}
-            fill
-            sizes={sizes}
-            priority={priority}
-            className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
-          />
-          {project.previewVideo && <HoverVideo src={project.previewVideo} />}
-        </div>
+        <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
+          <div data-curtain className={cn("relative overflow-hidden bg-sand", aspect)}>
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              fill
+              sizes={sizes}
+              priority={priority}
+              className="[translate:var(--px,0)_0] [scale:var(--ps,1)] object-cover transition-[scale] duration-[1.2s] ease-[var(--ease-out)] group-hover:[scale:calc(var(--ps,1)*1.05)] motion-reduce:group-hover:[scale:1]"
+            />
+            {project.previewVideo && <HoverVideo src={project.previewVideo} />}
+          </div>
+        </ViewTransition>
         <div className="mt-5 flex items-start justify-between gap-4">
           <div>
             <H className="font-display text-h4 text-fg-strong">{project.title}</H>

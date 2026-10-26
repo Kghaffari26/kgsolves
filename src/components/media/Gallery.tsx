@@ -70,6 +70,7 @@ export function Gallery({ images, title }: { images: ImageAsset[]; title: string
                 lastOpened.current = i;
                 setOpen(i);
               }}
+              data-curtain
               className="group block w-full overflow-hidden bg-sand"
               aria-label={`Open image ${i + 1} of ${images.length}: ${img.alt}`}
             >

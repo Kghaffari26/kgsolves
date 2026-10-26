@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ViewTransition } from "react";
 import { Container } from "@/components/ui/Container";
 import { Eyebrow } from "@/components/ui/Eyebrow";
 import { Heading } from "@/components/ui/Heading";
@@ -102,15 +103,20 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
         data-header-overlay
         className="theme-dark relative isolate flex min-h-[92svh] items-end overflow-hidden"
       >
-        <Image
-          src={project.heroImage.src}
-          alt={project.heroImage.alt}
-          fill
-          priority
-          fetchPriority="high"
-          sizes="100vw"
-          className="-z-10 object-cover"
-        />
+        {/* Same name as the project card image: the card morphs into this hero. */}
+        <ViewTransition name={`project-${project.slug}`} share="morph" default="none">
+          <div className="absolute inset-0 -z-10">
+            <Image
+              src={project.heroImage.src}
+              alt={project.heroImage.alt}
+              fill
+              priority
+              fetchPriority="high"
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+        </ViewTransition>
         {project.heroVideo?.mp4 && (
           <LoopVideo
             source={project.heroVideo}

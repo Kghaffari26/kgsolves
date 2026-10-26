@@ -1,7 +1,7 @@
 /**
  * Hand-drawn architectural elevation of a two-storey modern coastal house, split into the
- * three construction layers used by the Foundation Up story. Every stroke uses pathLength=1 so
- * one dash value (0 → 1) draws any line regardless of its real length.
+ * three construction layers used by the Foundation Up story. Each stroke is a separate path so
+ * GSAP's DrawSVG can draw them in sequence, the way the building actually goes up.
  *
  * `stage` controls which layers are drawn when rendered statically (reduced motion grid):
  * 1 = concrete, 2 = + framing, 3 = + envelope. The animated version controls dash offsets itself.
@@ -19,7 +19,7 @@ function range(from: number, to: number, step: number) {
   return out;
 }
 
-const L = { pathLength: 1, vectorEffect: "non-scaling-stroke" as const };
+const L = { vectorEffect: "non-scaling-stroke" as const };
 
 export function ConcreteLayer() {
   const hatch = range(W1.l - 30, W1.r + 10, 22);

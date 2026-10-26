@@ -149,6 +149,22 @@ test.describe("forms (console provider)", () => {
   });
 });
 
+test.describe("work filters", () => {
+  test("filtering shows matching projects and All restores them", async ({ page }) => {
+    await page.goto("/work");
+    const cards = page.locator("li[data-flip]:not([hidden])");
+    await expect(cards).toHaveCount(6);
+    await page.getByRole("button", { name: /^Multi-unit/ }).click();
+    await expect(cards).toHaveCount(1);
+    await expect(page.getByRole("button", { name: /^Multi-unit/ })).toHaveAttribute(
+      "aria-pressed",
+      "true",
+    );
+    await page.getByRole("button", { name: /^All/ }).click();
+    await expect(cards).toHaveCount(6);
+  });
+});
+
 test.describe("keyboard", () => {
   test("skip link moves focus to main content", async ({ page, isMobile }) => {
     test.skip(isMobile, "keyboard test");

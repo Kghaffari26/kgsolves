@@ -4,7 +4,7 @@ Marketing site for JM Kelley Inc., a Newport Beach general contractor that self-
 structural concrete and framing. Replaces the GoDaddy Website Builder site at jmkelleyinc.com.
 
 - **Stack:** Next.js 16 (App Router, TypeScript), Tailwind CSS v4, Sanity (embedded Studio at
-  `/studio`), GSAP + ScrollTrigger, Lenis, Motion, React Hook Form + Zod, Resend, Vercel Blob.
+  `/studio`), GSAP (ScrollTrigger, SplitText, Flip, DrawSVG, CustomEase), Lenis, React `<ViewTransition>`, React Hook Form + Zod, Resend, Vercel Blob.
 - **Content still needed from the client:** [`CONTENT_TODO.md`](CONTENT_TODO.md)
 - **Deploying (Vercel, Sanity, Resend, DNS cutover):** [`DEPLOY.md`](DEPLOY.md)
 
@@ -144,3 +144,24 @@ same two codec lines.
   switch, no flash).
 - **Unknown facts:** never invented. Fact fields are `null` until confirmed and render a
   `TODO(client)` marker, hidden in production with `NEXT_PUBLIC_HIDE_TODOS=true`.
+
+## Motion system
+
+One vocabulary, taken from building: things are **uncovered, drawn and placed**, never bounced
+or thrown. No glows, gradient blobs, springs or fade-up-everything.
+
+| Effect            | Where                                                                 | How                                                                                  |
+| ----------------- | --------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| Line masks        | Page titles (CSS, on first paint); section headings (`data-split`)    | `RevealText`; GSAP SplitText via `MotionDirector`                                    |
+| Curtain reveal    | Project cards, gallery, service images, before/after (`data-curtain`) | clip-path wipe upward + image settling from 1.18×                                    |
+| Hairlines         | Dividers (`data-rule`)                                                | scaleX from the left                                                                 |
+| Foundation Up     | Homepage                                                              | pinned scrub; DrawSVG draws slab → frame → envelope, then the photo is uncovered     |
+| Featured work     | Homepage                                                              | pinned horizontal travel; photos drift inside their frames; progress hairline        |
+| Filter            | `/work`                                                               | GSAP Flip: cards glide to new cells                                                  |
+| Card → case study | Navigation                                                            | React `<ViewTransition>` shared-element morph; pages cross-fade; header stays pinned |
+| Footer            | Every page                                                            | content rises from beneath the page (`data-uncover`); headline line masks            |
+| Hover             | Nav links, buttons                                                    | text roll; fill wipe from the bottom edge                                            |
+
+Eases live in `src/lib/motion/gsap.ts` (`jmk.out`, `jmk.inOut`, `jmk.draw`) and match the CSS
+variables `--ease-out` / `--ease-in-out`. Every effect is built lazily when its section is about a
+screen away (keeps main-thread tasks short) and never runs under `prefers-reduced-motion`.

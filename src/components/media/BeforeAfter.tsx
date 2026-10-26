@@ -21,7 +21,7 @@ export function BeforeAfter({
   const [pos, setPos] = useState(50);
   return (
     <figure>
-      <div className="relative aspect-[3/2] overflow-hidden bg-sand select-none">
+      <div data-curtain className="relative aspect-[3/2] overflow-hidden bg-sand select-none">
         <Image
           src={after.src}
           alt={after.alt}

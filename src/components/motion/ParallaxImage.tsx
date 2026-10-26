@@ -56,7 +56,7 @@ export function ParallaxImage({
   }, [amount]);
 
   return (
-    <div ref={frameRef} className={cn("relative overflow-hidden", className)}>
+    <div ref={frameRef} data-curtain className={cn("relative overflow-hidden", className)}>
       <div ref={innerRef} className="absolute inset-0 will-change-transform">
         <Image
           src={image.src}

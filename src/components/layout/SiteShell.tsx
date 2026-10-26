@@ -2,6 +2,7 @@ import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { CustomCursor } from "@/components/motion/CustomCursor";
+import { MotionDirector } from "@/components/motion/MotionDirector";
 import { getSiteSettings } from "@/lib/sanity/api";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { organizationLd } from "@/lib/seo/jsonld";
@@ -25,6 +26,7 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
       <Footer settings={settings} />
       <SmoothScroll />
       <CustomCursor />
+      <MotionDirector />
     </>
   );
 }

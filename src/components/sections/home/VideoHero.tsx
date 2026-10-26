@@ -26,7 +26,16 @@ export function VideoHero({ poster }: { poster: ImageAsset }) {
           aria-hidden
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,27,45,0.6)_0%,rgba(15,27,45,0.35)_30%,rgba(15,27,45,0.5)_60%,rgba(15,27,45,0.92)_100%)]"
         />
-        <Monogram className="absolute top-[calc(var(--header-h)+1.5rem)] right-[var(--gutter)] size-12 text-paper/50" />
+        <div className="absolute top-[calc(var(--header-h)+1.5rem)] right-[var(--gutter)] flex flex-col items-end gap-4 text-paper/60">
+          <Monogram className="size-12" />
+          {/* Survey mark: Newport Beach, to the nearest minute. */}
+          <p
+            className="hero-in eyebrow hidden text-[0.6875rem] tabular-nums md:block"
+            style={{ "--d": "600ms" } as React.CSSProperties}
+          >
+            33°37′ N · 117°56′ W
+          </p>
+        </div>
       </div>
 
       <div className="container-site pt-[calc(var(--header-h)+4rem)] pb-28 md:pb-32">

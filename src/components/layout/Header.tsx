@@ -106,6 +106,7 @@ export function Header({ phone }: { phone: string }) {
         ref={headerRef}
         data-top={atTop}
         data-hidden={hidden && !open}
+        style={{ viewTransitionName: "site-header" }}
         className="site-header fixed inset-x-0 top-0 z-50 h-[var(--header-h)] transition-[transform,background-color,color,border-color] duration-500 ease-[var(--ease-out)]"
       >
         <div className="container-site flex h-full items-center justify-between gap-6">
@@ -123,11 +124,13 @@ export function Header({ phone }: { phone: string }) {
                       href={item.href}
                       aria-current={active ? "page" : undefined}
                       className={cn(
-                        "link-underline py-2 text-[0.9375rem]",
-                        active && "bg-[length:100%_1px]",
+                        "group/nav relative inline-flex py-2 text-[0.9375rem]",
+                        active && "nav-active",
                       )}
                     >
-                      {item.label}
+                      <span className="roll" data-text={item.label}>
+                        <span>{item.label}</span>
+                      </span>
                     </Link>
                   </li>
                 );
