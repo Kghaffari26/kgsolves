@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "newport-beach",
+    "name": "Newport Beach",
+    "intro": [
+      "Newport Beach is where we are based and where most of our work has been, from the peninsula to the bluffs above the harbor.",
+      "Building here means working close to the water: tight lots, neighbors on every side, and much of the city inside the California coastal zone, where many projects need a coastal development permit as well as a building permit."
+    ],
+    "considerations": [
+      {
+        "title": "Coastal zone permitting",
+        "body": "Much of Newport Beach lies within the coastal zone. Depending on the property and scope, a project may need a coastal development permit in addition to a building permit, which affects schedule."
+      },
+      {
+        "title": "Tight lots and access",
+        "body": "Narrow lots, alleys and shared walls make staging, deliveries and concrete pours a planning exercise of their own."
+      },
+      {
+        "title": "Building near salt air",
+        "body": "Material and detailing choices matter more near the ocean. We talk them through during budgeting, not after."
+      }
+    ]
+  },
+  {
+    "slug": "newport-coast",
+    "name": "Newport Coast",
+    "intro": [
+      "Newport Coast is hillside country: larger custom homes on graded lots, with long views over the Pacific.",
+      "Many Newport Coast homes sit within master-planned communities, so in addition to the city, an association's architectural review is often part of getting a project approved."
+    ],
+    "considerations": [
+      {
+        "title": "Association review",
+        "body": "Community associations commonly review plans before construction. We build that step into the schedule from the start."
+      },
+      {
+        "title": "Hillside foundations",
+        "body": "Sloped lots put more of the budget into the ground. Doing our own structural concrete keeps that work under our direct control."
+      },
+      {
+        "title": "Large-scale custom homes",
+        "body": "Bigger homes mean more trades, more coordination and more to track. Weekly meetings and job documentation keep it visible."
+      }
+    ]
+  },
+  {
+    "slug": "corona-del-mar",
+    "name": "Corona del Mar",
+    "intro": [
+      "Corona del Mar is a village within the City of Newport Beach, with small lots, walkable streets and homes that step down toward the beaches and the bluffs.",
+      "Projects here are often about getting the most out of a modest footprint: careful planning, efficient structure and a construction site that respects a close-knit street."
+    ],
+    "considerations": [
+      {
+        "title": "Small-footprint planning",
+        "body": "On compact lots every foot counts. We review plans early for structure and cost so the space goes where it matters."
+      },
+      {
+        "title": "City of Newport Beach process",
+        "body": "Corona del Mar projects go through the City of Newport Beach, and coastal zone rules can apply depending on location."
+      },
+      {
+        "title": "Being a good neighbor",
+        "body": "Narrow streets mean planned deliveries, tidy staging and clear communication with the people next door."
+      }
+    ]
+  },
+  {
+    "slug": "costa-mesa",
+    "name": "Costa Mesa",
+    "intro": [
+      "Costa Mesa sits just inland of Newport Beach, with a mix of established neighborhoods and lots that often have room to grow.",
+      "That room is why many Costa Mesa homeowners look at additions, remodels and accessory dwelling units, and why a clear budget before design is so useful."
+    ],
+    "considerations": [
+      {
+        "title": "ADUs and additions",
+        "body": "Lot sizes in many Costa Mesa neighborhoods can make ADUs and additions practical. We start with what the lot and city rules allow."
+      },
+      {
+        "title": "City of Costa Mesa permitting",
+        "body": "Costa Mesa has its own building and planning process. We help prepare the submittal and respond to plan-check comments."
+      },
+      {
+        "title": "Working with what's there",
+        "body": "Older homes can hide surprises. Plan review and an honest budget contingency keep them from becoming emergencies."
+      }
+    ]
+  },
+  {
+    "slug": "huntington-beach",
+    "name": "Huntington Beach",
+    "intro": [
+      "Huntington Beach stretches from inland neighborhoods to the harbor and the open coast, with everything from tract-home remodels to new custom homes near the water.",
+      "Whichever end of the city a project is in, the same fundamentals apply: a realistic budget, buildable plans, and a structure built right the first time."
+    ],
+    "considerations": [
+      {
+        "title": "Coastal and inland sites",
+        "body": "Properties near the beach or harbor can fall within the coastal zone, which can add permit steps. Inland properties usually follow the standard city process."
+      },
+      {
+        "title": "City of Huntington Beach permitting",
+        "body": "Projects go through the City of Huntington Beach. We help assemble the submittal and work through plan check."
+      },
+      {
+        "title": "Remodel or rebuild",
+        "body": "For many older homes, the first question is whether to remodel or rebuild. Quantity take-offs and a clear budget help answer it."
+      }
+    ]
+  }
+]

@@ -115,7 +115,7 @@ export function Footer({ settings }: { settings: SiteSettings }) {
             </address>
             <dl className="mt-5 space-y-1 text-small">
               {settings.hours.map((h) => (
-                <div key={h.days} className="flex gap-2">
+                <div key={h.days}>
                   <dt className="text-fg-muted">{h.days}</dt>
                   <dd>{h.hours}</dd>
                 </div>

@@ -1,0 +1,440 @@
+[
+  {
+    "slug": "custom-homes",
+    "title": "Custom homes",
+    "summary": "Ground-up coastal homes, from first budget to final walkthrough, with design-build available.",
+    "intro": "We build custom homes in Newport Beach and coastal Orange County, and we pour the foundation and frame the structure with our own crews. Design-build is available, so a single team can carry a home from early budgeting through construction.",
+    "heroImage": {
+      "src": "/images/projects/4-fairway-point/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 4 Fairway Point, Newport Coast",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "General construction",
+        "body": "One general contractor responsible for the whole build, from site work to finishes."
+      },
+      {
+        "title": "Design-build",
+        "body": "Design and construction under one contract, so budget and buildability are part of the design conversation from the start."
+      },
+      {
+        "title": "Structural concrete",
+        "body": "Footings, slabs and structural concrete placed by our own crew."
+      },
+      {
+        "title": "Rough framing",
+        "body": "Our framing crew builds the structure, including pre-fab and modular framing where it fits the project."
+      },
+      {
+        "title": "Soft/hardscape, pools and spas",
+        "body": "Outdoor living built as part of the same contract as the house."
+      },
+      {
+        "title": "Quantity take-offs and budgets",
+        "body": "Line-item quantities and budgets before you commit, revisited as the design develops."
+      }
+    ],
+    "process": [
+      {
+        "title": "Budget",
+        "body": "We build a working budget from your goals, the lot and early plans, using quantity take-offs rather than square-foot guesses."
+      },
+      {
+        "title": "Design",
+        "body": "With your architect, or through design-build, we review plans for cost and constructability as they develop."
+      },
+      {
+        "title": "Permit",
+        "body": "We help assemble and track the permit submittal and respond to plan-check comments."
+      },
+      {
+        "title": "Build",
+        "body": "We pour, frame and manage every trade through completion, with weekly meetings and job documentation."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you pour and frame the house yourselves?",
+        "answer": "Yes. We self-perform structural concrete and rough framing, so the bones of the house are built by our own crews rather than subcontracted."
+      },
+      {
+        "question": "Do you offer design-build?",
+        "answer": "Yes. Design-build is one of our services, and we also build from plans prepared by your own architect."
+      },
+      {
+        "question": "Can you build the pool and landscape too?",
+        "answer": "Yes. Soft and hardscape, pools and spas are part of what we build."
+      },
+      {
+        "question": "How long does a custom home take to build?",
+        "answer": null
+      },
+      {
+        "question": "Where do you build?",
+        "answer": "Newport Beach and coastal Orange County, including Newport Coast, Corona del Mar, Costa Mesa and Huntington Beach."
+      }
+    ],
+    "relatedTypes": ["new-home"],
+    "video": null,
+    "order": 1
+  },
+  {
+    "slug": "remodels-additions",
+    "title": "Remodels & additions",
+    "summary": "Remodels and additions that tie new structure cleanly into an existing home.",
+    "intro": "Remodels and additions are where structure matters most: new work has to meet old work cleanly. Because we do our own concrete and framing, the structural side of a remodel stays with the same team that manages the rest of the job.",
+    "heroImage": {
+      "src": "/images/projects/1418-balboa-blvd/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 1418 Balboa Blvd, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "Remodels",
+        "body": "Interior and whole-house remodels managed by one general contractor."
+      },
+      {
+        "title": "Additions",
+        "body": "New foundations and framing tied into the existing structure by our own crews."
+      },
+      {
+        "title": "Plan review",
+        "body": "We review plans for cost and constructability before pricing, so surprises surface on paper first."
+      },
+      {
+        "title": "Budgets and change orders",
+        "body": "A clear budget up front, and documented change orders if the scope moves."
+      }
+    ],
+    "process": [
+      {
+        "title": "Budget",
+        "body": "We walk the house with you and price the work from plans and quantities."
+      },
+      {
+        "title": "Design",
+        "body": "We review drawings with your designer or architect for cost and buildability."
+      },
+      {
+        "title": "Permit",
+        "body": "We help prepare the permit submittal and work through plan-check comments."
+      },
+      {
+        "title": "Build",
+        "body": "We build, keep you updated in weekly meetings and document the job as it goes."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you take on remodels as well as new homes?",
+        "answer": "Yes. Remodels are one of our core services alongside new custom homes and ADUs."
+      },
+      {
+        "question": "Can we live in the house during the remodel?",
+        "answer": null
+      },
+      {
+        "question": "Who handles structural work on an addition?",
+        "answer": "We do. Foundations and framing are self-performed by our own concrete and framing crews."
+      }
+    ],
+    "relatedTypes": ["remodel"],
+    "video": null,
+    "order": 2
+  },
+  {
+    "slug": "adus",
+    "title": "ADUs",
+    "summary": "Accessory dwelling units, built start to finish by the same team that builds our custom homes.",
+    "intro": "An ADU is a small house with all the same systems as a large one. We build ADUs with the same crews and process we use on our custom homes: our own foundation, our own framing, and one point of contact from budget to move-in.",
+    "heroImage": {
+      "src": "/images/projects/4807-seashore/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 4807 Seashore, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "Budget and feasibility",
+        "body": "An early look at what the lot and local rules allow, and what it will cost."
+      },
+      {
+        "title": "Plans and permitting support",
+        "body": "We work with your designer and help carry the permit through plan check."
+      },
+      {
+        "title": "Foundation and framing",
+        "body": "Poured and framed by our own crews."
+      },
+      {
+        "title": "Complete construction",
+        "body": "Utilities, finishes and final inspection managed by one general contractor."
+      }
+    ],
+    "process": [
+      {
+        "title": "Budget",
+        "body": "We review the lot and goals and build a working budget."
+      },
+      {
+        "title": "Design",
+        "body": "We coordinate the design so it is buildable and fits the budget."
+      },
+      {
+        "title": "Permit",
+        "body": "We help prepare the submittal and respond to plan-check comments."
+      },
+      {
+        "title": "Build",
+        "body": "We build the ADU from foundation to final inspection."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you build detached and attached ADUs?",
+        "answer": null
+      },
+      {
+        "question": "Do you help with permitting?",
+        "answer": "Yes. Permitting is one of the four phases of our process, and we help prepare the submittal and respond to plan-check comments."
+      },
+      {
+        "question": "How much does an ADU cost?",
+        "answer": "It depends on size, site and finishes. We price each project from quantity take-offs rather than a flat per-square-foot number."
+      }
+    ],
+    "relatedTypes": ["adu"],
+    "video": null,
+    "order": 3
+  },
+  {
+    "slug": "concrete-framing",
+    "title": "Concrete & framing",
+    "summary": "Structural concrete, rough framing and pre-fab framing by our own crews. The bones of every project we build.",
+    "intro": "Most general contractors subcontract the structure. We pour and frame it ourselves. Structural concrete and rough framing are where a building's accuracy is set, and doing them in-house means the foundation, the frame and the schedule answer to the same people.",
+    "heroImage": {
+      "src": "/images/projects/4-fairway-point/framing-01.jpg",
+      "alt": "Placeholder standing in for a framing-stage jobsite photo of 4 Fairway Point, Newport Coast",
+      "width": 2000,
+      "height": 1333,
+      "kind": "jobsite",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "Structural concrete",
+        "body": "Footings, foundations, slabs and structural concrete for our own projects."
+      },
+      {
+        "title": "Rough framing",
+        "body": "Wall, floor and roof framing by our own framing crew."
+      },
+      {
+        "title": "Pre-fab and modular framing",
+        "body": "Panelized and modular framing where it saves time on site."
+      },
+      {
+        "title": "Lumber take-offs",
+        "body": "Detailed lumber take-offs, also offered to builders and framers as a stand-alone service."
+      }
+    ],
+    "process": [
+      {
+        "title": "Take-off",
+        "body": "We quantify concrete and lumber from the plans before anything is ordered."
+      },
+      {
+        "title": "Foundation",
+        "body": "Our crew forms, reinforces and pours the footings and slab."
+      },
+      {
+        "title": "Frame",
+        "body": "Our framers stand the structure, floor by floor, to the plans."
+      },
+      {
+        "title": "Hand-off",
+        "body": "The frame is ready for the envelope and the rest of the trades, with no gap between subcontractors."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you subcontract your concrete or framing?",
+        "answer": "No. Structural concrete and rough framing are self-performed by JM Kelley crews."
+      },
+      {
+        "question": "Do you offer concrete or framing on its own, for other builders?",
+        "answer": null
+      },
+      {
+        "question": "Do you offer pre-fab or modular framing?",
+        "answer": "Yes. Pre-fab and modular framing are part of our framing services."
+      },
+      {
+        "question": "Can I order a lumber take-off without hiring you to build?",
+        "answer": "Yes. Our lumber take-off service has a 48-hour turnaround (some rules apply), priced on the complexity of the plans. See For Builders."
+      }
+    ],
+    "relatedTypes": ["new-home", "multi-unit"],
+    "video": null,
+    "order": 4
+  },
+  {
+    "slug": "owners-representation",
+    "title": "Owner's representation",
+    "summary": "An experienced builder on your side of the table, wherever the project is.",
+    "intro": "When you are building with another contractor, an owner's representative protects your interests: reviewing contracts, tracking the budget and making sure the work matches what you are paying for. We provide owner's representation and contract compliance, and we travel worldwide for clients.",
+    "heroImage": {
+      "src": "/images/projects/2000-east-oceanfront/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 2000 East Oceanfront, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "Contract compliance",
+        "body": "We check the work, the schedule and the billing against the contract."
+      },
+      {
+        "title": "Bid and contract management",
+        "body": "We help solicit, level and negotiate bids, and review contracts before you sign."
+      },
+      {
+        "title": "Budget compliance",
+        "body": "We track spending against the budget and review change orders before they are approved."
+      },
+      {
+        "title": "Worldwide",
+        "body": "We travel for clients, so the same representation is available beyond Orange County."
+      }
+    ],
+    "process": [
+      {
+        "title": "Review",
+        "body": "We read the plans, the budget and any contracts already in place."
+      },
+      {
+        "title": "Plan",
+        "body": "We agree with you on reporting, meeting cadence and what we approve on your behalf."
+      },
+      {
+        "title": "Represent",
+        "body": "We attend meetings, review pay applications and change orders, and track the schedule."
+      },
+      {
+        "title": "Close out",
+        "body": "We check completion, documentation and warranties before final payment."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Do you only represent owners in Orange County?",
+        "answer": "No. We travel worldwide for owner's representation clients."
+      },
+      {
+        "question": "How is owner's representation priced?",
+        "answer": null
+      }
+    ],
+    "relatedTypes": ["new-home", "commercial"],
+    "video": null,
+    "order": 5
+  },
+  {
+    "slug": "project-management",
+    "title": "Project management",
+    "summary": "Construction and project management from feasibility through job documentation.",
+    "intro": "Construction and project management is the discipline that keeps a build on budget and on schedule. We manage the whole sequence, from the first feasibility questions to the last piece of job documentation.",
+    "heroImage": {
+      "src": "/images/projects/441-445-m-street/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 441, 443, 445 M Street, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "included": [
+      {
+        "title": "Feasibility",
+        "body": "What can be built, what it will cost, and what stands in the way."
+      },
+      {
+        "title": "Plan review",
+        "body": "Constructability and cost review of drawings before pricing and permitting."
+      },
+      {
+        "title": "Bid and contract management",
+        "body": "Bid packages, bid leveling and contracts for every trade."
+      },
+      {
+        "title": "Consultant management",
+        "body": "Coordinating architects, engineers and consultants."
+      },
+      {
+        "title": "Budget compliance",
+        "body": "Tracking every dollar against the approved budget."
+      },
+      {
+        "title": "Change orders",
+        "body": "Priced, documented and approved before the work changes."
+      },
+      {
+        "title": "Value engineering",
+        "body": "Finding cost savings that do not compromise the design intent."
+      },
+      {
+        "title": "Scheduling",
+        "body": "A working schedule that is updated as the job moves."
+      },
+      {
+        "title": "Weekly meetings",
+        "body": "A standing weekly meeting so decisions don't wait."
+      },
+      {
+        "title": "Job documentation",
+        "body": "Photos, logs and records kept for the life of the project."
+      }
+    ],
+    "process": [
+      {
+        "title": "Budget",
+        "body": "Feasibility and a working budget."
+      },
+      {
+        "title": "Design",
+        "body": "Plan review, consultant management and value engineering."
+      },
+      {
+        "title": "Permit",
+        "body": "Permit coordination and bid and contract management."
+      },
+      {
+        "title": "Build",
+        "body": "Scheduling, weekly meetings, change orders and documentation."
+      }
+    ],
+    "faqs": [
+      {
+        "question": "Can you manage a project you are not building?",
+        "answer": "Yes. Construction and project management, and owner's representation, are available as separate services."
+      },
+      {
+        "question": "How often will we meet?",
+        "answer": "Weekly. Weekly meetings are part of how we manage every project."
+      }
+    ],
+    "relatedTypes": ["new-home", "multi-unit", "commercial"],
+    "video": null,
+    "order": 6
+  }
+]

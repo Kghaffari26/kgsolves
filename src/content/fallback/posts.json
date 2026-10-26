@@ -1,0 +1,116 @@
+[
+  {
+    "slug": "building-in-newport-beachs-coastal-zone",
+    "title": "Building in Newport Beach's coastal zone",
+    "excerpt": "What the coastal zone means for a new home or remodel in Newport Beach, and how it shapes the schedule.",
+    "publishedAt": null,
+    "draft": true,
+    "heroImage": null,
+    "bodyFormat": "blocks",
+    "body": [
+      {
+        "_type": "paragraph",
+        "text": "Draft outline. TODO(client): review and approve before publishing."
+      },
+      {
+        "_type": "heading",
+        "text": "What the coastal zone is"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "The California Coastal Act and the coastal zone boundary",
+          "How Newport Beach's Local Coastal Program fits in",
+          "How to check whether a property is inside the zone"
+        ]
+      },
+      {
+        "_type": "heading",
+        "text": "When a coastal development permit applies"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "New homes, additions and some remodels",
+          "Exemptions and waivers, in general terms",
+          "Where to confirm requirements for a specific address"
+        ]
+      },
+      {
+        "_type": "heading",
+        "text": "How it affects the schedule"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "Sequencing with the building permit",
+          "Planning the budget phase around review time"
+        ]
+      },
+      {
+        "_type": "heading",
+        "text": "How we approach it"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "Budget → Design → Permit → Build",
+          "TODO(client): first-hand lessons from past coastal projects"
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "adu-rules-in-orange-county",
+    "title": "ADU rules in Orange County",
+    "excerpt": "A plain-language overview of building an accessory dwelling unit in coastal Orange County cities.",
+    "publishedAt": null,
+    "draft": true,
+    "heroImage": null,
+    "bodyFormat": "blocks",
+    "body": [
+      {
+        "_type": "paragraph",
+        "text": "Draft outline. TODO(client): review and approve before publishing. State and local ADU rules change often; verify every figure against current law before publishing."
+      },
+      {
+        "_type": "heading",
+        "text": "State law sets the floor"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "What California ADU law requires cities to allow",
+          "Attached, detached and conversion ADUs; junior ADUs"
+        ]
+      },
+      {
+        "_type": "heading",
+        "text": "Each city adds its own rules"
+      },
+      {
+        "_type": "list",
+        "items": ["Newport Beach", "Costa Mesa", "Huntington Beach", "Coastal zone considerations"]
+      },
+      {
+        "_type": "heading",
+        "text": "Budgeting an ADU"
+      },
+      {
+        "_type": "list",
+        "items": [
+          "Why we price from quantity take-offs",
+          "Site, utilities and foundation costs that are easy to miss"
+        ]
+      },
+      {
+        "_type": "heading",
+        "text": "From budget to move-in"
+      },
+      {
+        "_type": "list",
+        "items": ["Budget → Design → Permit → Build", "TODO(client): typical timeline"]
+      }
+    ]
+  }
+]
