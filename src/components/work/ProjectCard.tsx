@@ -12,12 +12,15 @@ export function ProjectCard({
   aspect = "aspect-[4/5]",
   className,
   headingLevel: H = "h3",
+  priority,
 }: {
   project: Project;
   sizes?: string;
   aspect?: string;
   className?: string;
   headingLevel?: "h2" | "h3";
+  /** above-the-fold cards load eagerly (LCP) */
+  priority?: boolean;
 }) {
   const { specs } = project;
   return (
@@ -34,6 +37,7 @@ export function ProjectCard({
             alt={project.heroImage.alt}
             fill
             sizes={sizes}
+            priority={priority}
             className="object-cover transition-transform duration-[1.2s] ease-[var(--ease-out)] group-hover:scale-[1.06] motion-reduce:group-hover:scale-100"
           />
           {project.previewVideo && <HoverVideo src={project.previewVideo} />}

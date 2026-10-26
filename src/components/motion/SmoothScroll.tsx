@@ -2,7 +2,6 @@
 
 import { useEffect } from "react";
 import { usePathname } from "next/navigation";
-import Lenis from "lenis";
 import { setLenis, getLenis } from "@/lib/motion/lenis";
 import { useReducedMotion } from "@/lib/motion/useReducedMotion";
 
@@ -13,10 +12,17 @@ export function SmoothScroll() {
 
   useEffect(() => {
     if (reduced) return;
-    const lenis = new Lenis({ autoRaf: true, anchors: true, lerp: 0.11 });
-    setLenis(lenis);
+    let lenis: import("lenis").default | null = null;
+    let cancelled = false;
+    // Loaded after hydration so it never competes with first paint.
+    import("lenis").then(({ default: Lenis }) => {
+      if (cancelled) return;
+      lenis = new Lenis({ autoRaf: true, anchors: true, lerp: 0.11 });
+      setLenis(lenis);
+    });
     return () => {
-      lenis.destroy();
+      cancelled = true;
+      lenis?.destroy();
       setLenis(null);
     };
   }, [reduced]);

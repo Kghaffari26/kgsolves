@@ -1,7 +1,7 @@
 "use server";
 
 import { headers } from "next/headers";
-import { z } from "zod";
+import * as z from "zod/mini";
 import { getLeadProvider, type Lead } from "./provider";
 import { rateLimit } from "./rateLimit";
 import { planUploadLead, startProjectLead } from "./email";
@@ -29,7 +29,7 @@ async function guard(startedAt: unknown, website: unknown): Promise<FormResult |
   return null;
 }
 
-function invalid(error: z.ZodError): FormResult {
+function invalid(error: z.core.$ZodError): FormResult {
   return {
     ok: false,
     error: "Please check the highlighted fields.",

@@ -18,9 +18,7 @@ export function Divider({
     <div role="separator" className={cn("relative flex items-center text-fg-muted", className)}>
       <span aria-hidden className="h-3 w-px bg-current opacity-50" />
       <span aria-hidden className="h-px flex-1 bg-current opacity-30" />
-      {label && (
-        <span className="eyebrow px-4 text-[0.6875rem] tracking-[0.2em] opacity-80">{label}</span>
-      )}
+      {label && <span className="eyebrow px-4 text-[0.6875rem] tracking-[0.2em]">{label}</span>}
       {label && <span aria-hidden className="h-px flex-1 bg-current opacity-30" />}
       <span aria-hidden className="h-3 w-px bg-current opacity-50" />
     </div>

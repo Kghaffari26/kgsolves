@@ -13,7 +13,7 @@
     "check": "npm run lint && npm run typecheck && npm run build",
     "test:e2e": "playwright test",
     "qa:screenshots": "playwright test --project=screenshots",
-    "lhci": "lhci autorun",
+    "lhci": "lhci autorun --config=lighthouserc.cjs",
     "scrape": "tsx scripts/scrape-current-site.ts",
     "legacy:apply": "tsx scripts/apply-legacy-assets.ts",
     "placeholders": "tsx scripts/make-placeholders.ts",
@@ -43,6 +43,7 @@
     "zod": "^4.6.7"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",
     "@tailwindcss/turbopack": "^4",

@@ -1,33 +1,37 @@
 "use client";
 
-import { useState } from "react";
-import { LazyMotion, domAnimation, m } from "motion/react";
-import { useReducedMotion } from "@/lib/motion/useReducedMotion";
+import { useLayoutEffect, useRef } from "react";
 
 // Client-only flag: flips after the first hydrated page so later navigations animate.
 let hydrated = false;
 
 /**
- * Short fade/slide on client-side navigation (~350ms). The very first page load is not
- * animated so server-rendered content (and LCP) paints immediately.
+ * Short fade/slide on client-side navigation (350ms) using the Web Animations API, so no
+ * animation library ships on every page. The first page load is not animated, so
+ * server-rendered content (and LCP) paints immediately. Reduced motion gets a plain fade.
  */
 export function PageTransition({ children }: { children: React.ReactNode }) {
-  const reduced = useReducedMotion();
-  const [animateIn] = useState(() => {
-    if (typeof window === "undefined") return false;
-    const was = hydrated;
-    hydrated = true;
-    return was;
-  });
-  return (
-    <LazyMotion features={domAnimation} strict>
-      <m.div
-        initial={animateIn ? { opacity: 0, y: reduced ? 0 : 14 } : false}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
-      >
-        {children}
-      </m.div>
-    </LazyMotion>
-  );
+  const ref = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    if (!hydrated) {
+      hydrated = true;
+      return;
+    }
+    const el = ref.current;
+    if (!el?.animate) return;
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const anim = el.animate(
+      reduced
+        ? [{ opacity: 0 }, { opacity: 1 }]
+        : [
+            { opacity: 0, transform: "translate3d(0, 14px, 0)" },
+            { opacity: 1, transform: "none" },
+          ],
+      { duration: reduced ? 200 : 350, easing: "cubic-bezier(0.22, 1, 0.36, 1)" },
+    );
+    return () => anim.cancel();
+  }, []);
+
+  return <div ref={ref}>{children}</div>;
 }

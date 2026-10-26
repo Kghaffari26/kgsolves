@@ -1,7 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AnimatePresence, LazyMotion, domAnimation, m } from "motion/react";
+import { AnimatePresence } from "motion/react";
+import { LazyMotion } from "motion/react";
+import * as m from "motion/react-m";
+import { loadMotionFeatures } from "@/lib/motion/loadFeatures";
 import { ProjectCard } from "./ProjectCard";
 import { Chip } from "@/components/ui/Tag";
 import { projectFilters } from "@/lib/site";
@@ -22,7 +25,7 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
   }, [projects]);
 
   return (
-    <LazyMotion features={domAnimation} strict>
+    <LazyMotion features={loadMotionFeatures} strict>
       <div role="group" aria-label="Filter projects by type" className="flex flex-wrap gap-2">
         {projectFilters.map((f) => (
           <Chip key={f.value} active={filter === f.value} onClick={() => setFilter(f.value)}>
@@ -52,7 +55,7 @@ export function WorkGrid({ projects }: { projects: Project[] }) {
               transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
               className={i % 3 === 1 ? "lg:mt-24" : undefined}
             >
-              <ProjectCard project={p} headingLevel="h2" />
+              <ProjectCard project={p} headingLevel="h2" priority={i < 2} />
             </m.li>
           ))}
         </AnimatePresence>

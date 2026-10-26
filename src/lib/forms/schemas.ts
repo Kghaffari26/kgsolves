@@ -1,4 +1,4 @@
-import { z } from "zod";
+import * as z from "zod/mini";
 
 /** Shared by the client forms (react-hook-form) and the server actions. */
 
@@ -47,56 +47,65 @@ export const startWindows = [
 const values = <T extends readonly { value: string }[]>(list: T) =>
   list.map((x) => x.value) as unknown as [T[number]["value"], ...T[number]["value"][]];
 
-const phone = z
-  .string()
-  .trim()
-  .max(30)
-  .refine(
+// zod/mini: the same validation as classic Zod at a fraction of the bundle size, since these
+// schemas ship to the browser with the forms.
+const text = (min: number, max: number, message: string) =>
+  z.string().check(z.trim(), z.minLength(min, message), z.maxLength(max));
+const optionalText = (max: number, message?: string) =>
+  z._default(z.optional(z.string().check(z.trim(), z.maxLength(max, message))), "");
+const email = z.email("Enter a valid email address.").check(z.maxLength(200));
+
+const phone = z.string().check(
+  z.trim(),
+  z.maxLength(30),
+  z.refine(
     (v) => v === "" || v.replace(/\D/g, "").length >= 10,
     "Enter a phone number with area code, or leave it blank.",
-  );
+  ),
+);
 
 /** Spam controls carried by both forms. */
 export const antiSpam = {
   /** honeypot: real people never see or fill this */
-  website: z.string().max(0, "Leave this field empty.").optional().default(""),
+  website: z._default(z.optional(z.string().check(z.maxLength(0, "Leave this field empty."))), ""),
   /** ms timestamp the form was rendered */
-  startedAt: z.number().int().nonnegative(),
+  startedAt: z.number().check(z.gte(0)),
 };
 
-export const startProjectSteps = [
-  z.object({ projectType: z.enum(values(projectTypes), { error: "Choose the type of project." }) }),
-  z.object({
+const stepShapes = [
+  { projectType: z.enum(values(projectTypes), { error: "Choose the type of project." }) },
+  {
     city: z.enum(values(cities), { error: "Choose a location." }),
-    cityOther: z.string().trim().max(80).optional().default(""),
+    cityOther: optionalText(80),
     lot: z.enum(values(lotStatus), { error: "Let us know about the lot." }),
-  }),
-  z.object({
+  },
+  {
     budget: z.enum(values(budgets), { error: "Choose a budget range." }),
     start: z.enum(values(startWindows), { error: "Choose a target start." }),
-  }),
-  z.object({
-    name: z.string().trim().min(2, "Enter your name.").max(100),
-    email: z.email("Enter a valid email address.").max(200),
+  },
+  {
+    name: text(2, 100, "Enter your name."),
+    email,
     phone,
-    message: z
-      .string()
-      .trim()
-      .max(3000, "Keep the message under 3,000 characters.")
-      .optional()
-      .default(""),
-  }),
+    message: optionalText(3000, "Keep the message under 3,000 characters."),
+  },
 ] as const;
 
-export const startProjectSchema = startProjectSteps[0]
-  .extend(startProjectSteps[1].shape)
-  .extend(startProjectSteps[2].shape)
-  .extend(startProjectSteps[3].shape)
-  .extend({ ...antiSpam, ref: z.string().max(80).optional().default("") })
-  .refine((d) => d.city !== "other" || d.cityOther.length > 1, {
-    path: ["cityOther"],
-    message: "Tell us where the project is.",
-  });
+export const startProjectSchema = z
+  .object({
+    ...stepShapes[0],
+    ...stepShapes[1],
+    ...stepShapes[2],
+    ...stepShapes[3],
+    ...antiSpam,
+    ref: optionalText(80),
+  })
+  .check(
+    z.refine((d) => d.city !== "other" || d.cityOther.length > 1, {
+      path: ["cityOther"],
+      message: "Tell us where the project is.",
+    }),
+  );
 
 export type StartProjectInput = z.input<typeof startProjectSchema>;
 export type StartProjectData = z.output<typeof startProjectSchema>;
@@ -116,37 +125,41 @@ export const ACCEPTED_CONTENT_TYPES = [
 ];
 
 export const uploadedFile = z.object({
-  name: z.string().max(200),
-  size: z.number().int().positive(),
-  url: z.url().nullable(),
+  name: z.string().check(z.maxLength(200)),
+  size: z.number().check(z.gt(0)),
+  url: z.nullable(z.url()),
 });
 
 export const planUploadSchema = z
   .object({
-    company: z.string().trim().min(2, "Enter your company name.").max(120),
-    contactName: z.string().trim().min(2, "Enter a contact name.").max(100),
-    email: z.email("Enter a valid email address.").max(200),
+    company: text(2, 120, "Enter your company name."),
+    contactName: text(2, 100, "Enter a contact name."),
+    email,
     phone,
-    projectAddress: z.string().trim().min(3, "Enter the project address or city.").max(200),
+    projectAddress: text(3, 200, "Enter the project address or city."),
     neededBy: z.iso.date("Choose the date you need it by."),
-    notes: z.string().trim().max(3000).optional().default(""),
+    notes: optionalText(3000),
     files: z
       .array(uploadedFile)
-      .min(1, "Add at least one PDF or DWG file.")
-      .max(20, "Up to 20 files."),
+      .check(
+        z.minLength(1, "Add at least one PDF or DWG file."),
+        z.maxLength(20, "Up to 20 files."),
+      ),
     ...antiSpam,
   })
-  .refine((d) => d.files.reduce((n, f) => n + f.size, 0) <= MAX_UPLOAD_BYTES, {
-    path: ["files"],
-    message: "Files must total 50 MB or less.",
-  })
-  .refine(
-    (d) =>
-      d.files.every((f) => ACCEPTED_EXTENSIONS.some((ext) => f.name.toLowerCase().endsWith(ext))),
-    {
+  .check(
+    z.refine((d) => d.files.reduce((n, f) => n + f.size, 0) <= MAX_UPLOAD_BYTES, {
       path: ["files"],
-      message: "Only PDF and DWG files are accepted.",
-    },
+      message: "Files must total 50 MB or less.",
+    }),
+    z.refine(
+      (d) =>
+        d.files.every((f) => ACCEPTED_EXTENSIONS.some((ext) => f.name.toLowerCase().endsWith(ext))),
+      {
+        path: ["files"],
+        message: "Only PDF and DWG files are accepted.",
+      },
+    ),
   );
 
 export type PlanUploadInput = z.input<typeof planUploadSchema>;

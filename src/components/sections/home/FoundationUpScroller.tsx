@@ -95,11 +95,16 @@ export function FoundationUpScroller({
                 key={s.key}
                 aria-current={i === active ? "step" : undefined}
                 className={cn(
-                  "border-l pl-5 transition-[opacity,border-color] duration-500",
-                  i === active ? "border-accent opacity-100" : "border-rule opacity-45",
+                  "border-l pl-5 transition-[border-color] duration-500",
+                  i === active ? "border-accent" : "border-rule",
                 )}
               >
-                <p className="eyebrow text-accent-text">
+                <p
+                  className={cn(
+                    "eyebrow transition-colors duration-500",
+                    i === active ? "text-accent-text" : "text-fg-muted",
+                  )}
+                >
                   {String(i + 1).padStart(2, "0")} · {s.label}
                 </p>
                 <p

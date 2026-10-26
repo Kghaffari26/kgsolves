@@ -30,6 +30,7 @@ export function PlanUploadForm({ uploadsEnabled }: { uploadsEnabled: boolean }) 
   const [files, setFiles] = useState<File[]>([]);
   const [progress, setProgress] = useState<Record<string, number>>({});
   const [dragging, setDragging] = useState(false);
+  const [fileNotice, setFileNotice] = useState<string | null>(null);
   const [done, setDone] = useState(false);
   const [serverError, setServerError] = useState<string | null>(null);
   const [pending, startTransition] = useTransition();
@@ -75,13 +76,15 @@ export function PlanUploadForm({ uploadsEnabled }: { uploadsEnabled: boolean }) 
       (f, i, arr) => arr.findIndex((g) => g.name === f.name && g.size === f.size) === i,
     );
     syncFiles(merged);
-    if (rejected.length) {
-      setError("files", {
-        message: `Only PDF and DWG files are accepted (skipped ${rejected.map((f) => f.name).join(", ")}).`,
-      });
-    } else if (merged.reduce((n, f) => n + f.size, 0) > MAX_UPLOAD_BYTES) {
+    // Rejections are a notice about this pick, separate from schema validation of the list.
+    setFileNotice(
+      rejected.length
+        ? `Only PDF and DWG files are accepted (skipped ${rejected.map((f) => f.name).join(", ")}).`
+        : null,
+    );
+    if (merged.reduce((n, f) => n + f.size, 0) > MAX_UPLOAD_BYTES) {
       setError("files", { message: "Files must total 50 MB or less." });
-    } else clearErrors("files");
+    } else if (merged.length) clearErrors("files");
   };
 
   const total = files.reduce((n, f) => n + f.size, 0);
@@ -210,7 +213,7 @@ export function PlanUploadForm({ uploadsEnabled }: { uploadsEnabled: boolean }) 
           className={cn(
             "mt-3 flex flex-col items-center justify-center gap-3 border border-dashed px-6 py-10 text-center transition-colors",
             dragging ? "border-fg-strong bg-surface" : "border-current/30",
-            errors.files && "border-[#A1361F]",
+            (errors.files || fileNotice) && "border-[#A1361F]",
           )}
         >
           <svg
@@ -241,7 +244,7 @@ export function PlanUploadForm({ uploadsEnabled }: { uploadsEnabled: boolean }) 
             accept=".pdf,.dwg,application/pdf"
             className="sr-only"
             aria-labelledby={`${dropId}-label`}
-            aria-describedby={errors.files ? `${dropId}-error` : undefined}
+            aria-describedby={errors.files || fileNotice ? `${dropId}-error` : undefined}
             onChange={(e) => {
               if (e.target.files) addFiles(e.target.files);
               e.target.value = "";
@@ -251,7 +254,7 @@ export function PlanUploadForm({ uploadsEnabled }: { uploadsEnabled: boolean }) 
         </div>
         <FieldError
           id={`${dropId}-error`}
-          message={errors.files?.message ?? errors.files?.root?.message}
+          message={fileNotice ?? errors.files?.message ?? errors.files?.root?.message}
         />
 
         {files.length > 0 && (

@@ -11,6 +11,7 @@ import { FadeUp } from "@/components/motion/FadeUp";
 import { BeforeAfter } from "@/components/media/BeforeAfter";
 import { Gallery } from "@/components/media/Gallery";
 import { VideoEmbed } from "@/components/media/VideoEmbed";
+import { LoopVideo } from "@/components/media/LoopVideo";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getProject, getProjects } from "@/lib/sanity/api";
 import { buildMetadata } from "@/lib/seo/metadata";
@@ -111,19 +112,10 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
           className="-z-10 object-cover"
         />
         {project.heroVideo?.mp4 && (
-          <video
-            className="absolute inset-0 -z-10 size-full object-cover motion-reduce:hidden"
-            muted
-            loop
-            playsInline
-            autoPlay
-            preload="none"
-            poster={project.heroVideo.poster ?? project.heroImage.src}
-            aria-hidden
-          >
-            {project.heroVideo.webm && <source src={project.heroVideo.webm} type="video/webm" />}
-            <source src={project.heroVideo.mp4} type="video/mp4" />
-          </video>
+          <LoopVideo
+            source={project.heroVideo}
+            className="absolute inset-0 -z-10 size-full object-cover"
+          />
         )}
         <div
           aria-hidden

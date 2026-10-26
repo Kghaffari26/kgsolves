@@ -4,7 +4,7 @@ import { useEffect, useRef } from "react";
 
 /**
  * Large statement whose words brighten one by one as it scrolls through the viewport.
- * Words start at 18% opacity only after JS confirms motion is allowed; the server HTML and
+ * Words start at 50% opacity (still 3:1+ contrast for large text) only after JS confirms motion is allowed; the server HTML and
  * reduced-motion users get solid text.
  */
 export function WordReveal({ text, className }: { text: string; className?: string }) {
@@ -27,7 +27,7 @@ export function WordReveal({ text, className }: { text: string; className?: stri
       const p = Math.min(1, Math.max(0, (start - r.top) / total));
       const lit = p * spans.length;
       spans.forEach((s, i) => {
-        s.style.opacity = String(0.18 + 0.82 * Math.min(1, Math.max(0, lit - i)));
+        s.style.opacity = String(0.5 + 0.5 * Math.min(1, Math.max(0, lit - i)));
       });
     };
     const onScroll = () => {
