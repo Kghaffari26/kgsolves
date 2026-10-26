@@ -1,0 +1,448 @@
+[
+  {
+    "slug": "4-fairway-point",
+    "title": "4 Fairway Point",
+    "location": "Newport Coast",
+    "city": "newport-coast",
+    "type": "new-home",
+    "typeConfirmed": false,
+    "summary": "An Italian/Mediterranean estate with a pool in Newport Coast.",
+    "specs": {
+      "beds": 8,
+      "baths": 10.5,
+      "sqft": 15198
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/4-fairway-point/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 4 Fairway Point, Newport Coast",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/4-fairway-point/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 4 Fairway Point, Newport Coast",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4-fairway-point/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 4 Fairway Point, Newport Coast",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4-fairway-point/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 4 Fairway Point, Newport Coast",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4-fairway-point/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 4 Fairway Point, Newport Coast",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [
+      {
+        "label": "Framing to finished",
+        "before": {
+          "src": "/images/projects/4-fairway-point/framing-01.jpg",
+          "alt": "Placeholder standing in for a framing-stage jobsite photo of 4 Fairway Point, Newport Coast",
+          "width": 2000,
+          "height": 1333,
+          "kind": "jobsite",
+          "placeholder": true
+        },
+        "after": {
+          "src": "/images/projects/4-fairway-point/gallery-01.jpg",
+          "alt": "Placeholder standing in for a finished front exterior photo of 4 Fairway Point, Newport Coast",
+          "width": 2000,
+          "height": 1333,
+          "kind": "finished",
+          "placeholder": true
+        }
+      }
+    ],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": true,
+    "order": 1
+  },
+  {
+    "slug": "1418-balboa-blvd",
+    "title": "1418 Balboa Blvd",
+    "location": "Newport Beach",
+    "city": "newport-beach",
+    "type": "new-home",
+    "typeConfirmed": false,
+    "summary": "A white, modern coastal home in Newport Beach.",
+    "specs": {
+      "beds": 4,
+      "baths": 4.5,
+      "sqft": 3168
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/1418-balboa-blvd/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 1418 Balboa Blvd, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/1418-balboa-blvd/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 1418 Balboa Blvd, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/1418-balboa-blvd/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 1418 Balboa Blvd, Newport Beach",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/1418-balboa-blvd/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 1418 Balboa Blvd, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/1418-balboa-blvd/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 1418 Balboa Blvd, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": true,
+    "order": 2
+  },
+  {
+    "slug": "441-445-m-street",
+    "title": "441, 443, 445 M Street",
+    "location": "Newport Beach",
+    "city": "newport-beach",
+    "type": "multi-unit",
+    "typeConfirmed": true,
+    "summary": "Multi-unit coastal homes in Newport Beach.",
+    "specs": {
+      "beds": null,
+      "baths": null,
+      "sqft": null
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/441-445-m-street/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 441, 443, 445 M Street, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/441-445-m-street/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 441, 443, 445 M Street, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/441-445-m-street/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 441, 443, 445 M Street, Newport Beach",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/441-445-m-street/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 441, 443, 445 M Street, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/441-445-m-street/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 441, 443, 445 M Street, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": true,
+    "order": 3
+  },
+  {
+    "slug": "4807-seashore",
+    "title": "4807 Seashore",
+    "location": "Newport Beach",
+    "city": "newport-beach",
+    "type": "new-home",
+    "typeConfirmed": false,
+    "summary": "A coastal home at 4807 Seashore in Newport Beach.",
+    "specs": {
+      "beds": 4,
+      "baths": 4.5,
+      "sqft": 3060
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/4807-seashore/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 4807 Seashore, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/4807-seashore/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 4807 Seashore, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4807-seashore/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 4807 Seashore, Newport Beach",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4807-seashore/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 4807 Seashore, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/4807-seashore/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 4807 Seashore, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": false,
+    "order": 4
+  },
+  {
+    "slug": "2000-east-oceanfront",
+    "title": "2000 East Oceanfront",
+    "location": "Newport Beach",
+    "city": "newport-beach",
+    "type": "new-home",
+    "typeConfirmed": false,
+    "summary": "A coastal home at 2000 East Oceanfront in Newport Beach.",
+    "specs": {
+      "beds": 5,
+      "baths": 5.5,
+      "sqft": 3968
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/2000-east-oceanfront/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 2000 East Oceanfront, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/2000-east-oceanfront/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 2000 East Oceanfront, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/2000-east-oceanfront/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 2000 East Oceanfront, Newport Beach",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/2000-east-oceanfront/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 2000 East Oceanfront, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/2000-east-oceanfront/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 2000 East Oceanfront, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": true,
+    "order": 5
+  },
+  {
+    "slug": "302-kings-road",
+    "title": "302 Kings Road",
+    "location": "Newport Beach",
+    "city": "newport-beach",
+    "type": "new-home",
+    "typeConfirmed": false,
+    "summary": "A home at 302 Kings Road in Newport Beach.",
+    "specs": {
+      "beds": null,
+      "baths": null,
+      "sqft": null
+    },
+    "year": null,
+    "role": null,
+    "scope": null,
+    "architect": null,
+    "heroImage": {
+      "src": "/images/projects/302-kings-road/hero.jpg",
+      "alt": "Placeholder standing in for a finished exterior photo of 302 Kings Road, Newport Beach",
+      "width": 2400,
+      "height": 1500,
+      "kind": "finished",
+      "placeholder": true
+    },
+    "heroVideo": null,
+    "previewVideo": null,
+    "gallery": [
+      {
+        "src": "/images/projects/302-kings-road/gallery-01.jpg",
+        "alt": "Placeholder standing in for a front exterior photo of 302 Kings Road, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/302-kings-road/gallery-02.jpg",
+        "alt": "Placeholder standing in for a interior living space photo of 302 Kings Road, Newport Beach",
+        "width": 1333,
+        "height": 2000,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/302-kings-road/gallery-03.jpg",
+        "alt": "Placeholder standing in for a detail photo of 302 Kings Road, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      },
+      {
+        "src": "/images/projects/302-kings-road/gallery-04.jpg",
+        "alt": "Placeholder standing in for a outdoor living area photo of 302 Kings Road, Newport Beach",
+        "width": 2000,
+        "height": 1333,
+        "kind": "finished",
+        "placeholder": true
+      }
+    ],
+    "beforeAfter": [],
+    "story": {
+      "brief": null,
+      "build": null,
+      "result": null
+    },
+    "walkthrough": null,
+    "featured": false,
+    "order": 6
+  }
+]
