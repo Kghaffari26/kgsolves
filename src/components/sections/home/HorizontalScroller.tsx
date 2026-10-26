@@ -72,7 +72,7 @@ export function HorizontalScroller({
       <div className="container-site">{header}</div>
       <ul
         ref={track}
-        className="no-scrollbar mt-12 flex snap-x snap-mandatory gap-[var(--grid-gap)] overflow-x-auto pr-[var(--gutter)] pb-4 pl-[max(var(--gutter),calc((100vw-var(--max-w))/2+var(--gutter)))] scroll-pl-[max(var(--gutter),calc((100vw-var(--max-w))/2+var(--gutter)))] will-change-transform lg:mt-16"
+        className="no-scrollbar mt-12 flex snap-x snap-mandatory scroll-pl-[max(var(--gutter),calc((100vw-var(--max-w))/2+var(--gutter)))] gap-[var(--grid-gap)] overflow-x-auto pr-[var(--gutter)] pb-4 pl-[max(var(--gutter),calc((100vw-var(--max-w))/2+var(--gutter)))] will-change-transform lg:mt-16"
         aria-label="Featured projects"
       >
         {children}
