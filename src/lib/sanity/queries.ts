@@ -30,7 +30,8 @@ export const servicesQuery =
 export const settingsQuery = defineQuery(`*[_type == "siteSettings"][0]{
   companyName, legalName, phone, email, streetAddress, city, region, postalCode,
   hours[] { days, hours }, openingHours, license { number, verified, board },
-  insuranceStatement, social[] { label, url }, stats[] { label, value, verified }
+  insuranceStatement, social[] { label, url }, stats[] { label, value, verified },
+  "heroVideo": heroVideo { "mp4": mp4.asset->url, "webm": webm.asset->url, "poster": poster.asset->url }
 }`);
 
 export const testimonialsQuery = defineQuery(`*[_type == "testimonial"] | order(_createdAt desc) {

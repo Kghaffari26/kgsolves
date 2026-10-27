@@ -2,9 +2,13 @@ import Image from "next/image";
 import { HeroVideo } from "@/components/media/HeroVideo";
 import { Button } from "@/components/ui/Button";
 import { Monogram } from "@/components/ui/Logo";
-import type { ImageAsset } from "@/lib/types";
+import type { ImageAsset, VideoSource } from "@/lib/types";
 
-export function VideoHero({ poster }: { poster: ImageAsset }) {
+export function VideoHero({ poster, video }: { poster: ImageAsset; video?: VideoSource | null }) {
+  // Approved clip from `npm run clips:apply` (or Sanity) when there is one; otherwise the
+  // generated Ken Burns placeholder.
+  const mp4 = video?.mp4 ?? "/video/hero-placeholder.mp4";
+  const webm = video?.mp4 ? video.webm : "/video/hero-placeholder.webm";
   return (
     <section
       data-header-overlay
@@ -21,7 +25,7 @@ export function VideoHero({ poster }: { poster: ImageAsset }) {
           sizes="100vw"
           className="hero-kenburns object-cover"
         />
-        <HeroVideo mp4="/video/hero-placeholder.mp4" webm="/video/hero-placeholder.webm" />
+        <HeroVideo mp4={mp4} webm={webm} />
         <div
           aria-hidden
           className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,25,23,0.6)_0%,rgba(23,25,23,0.35)_30%,rgba(23,25,23,0.5)_60%,rgba(23,25,23,0.92)_100%)]"

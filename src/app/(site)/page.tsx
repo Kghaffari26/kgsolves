@@ -72,7 +72,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <VideoHero poster={hero} />
+      <VideoHero poster={hero} video={settings.heroVideo} />
       <Positioning stats={settings.stats} />
       <FoundationUp finished={hero} />
       <FeaturedWork projects={featured.slice(0, 4)} />

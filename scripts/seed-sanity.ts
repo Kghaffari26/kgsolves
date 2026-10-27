@@ -156,6 +156,8 @@ async function main() {
     _id: "siteSettings",
     _type: "siteSettings",
     ...settings,
+    // Video files are uploaded in the Studio (or via clips:apply + commit), not seeded.
+    heroVideo: undefined,
     hours: settings.hours.map((h) => ({ _key: key(), _type: "hoursRow", ...h })),
     social: settings.social.map((s) => ({
       _key: key(),

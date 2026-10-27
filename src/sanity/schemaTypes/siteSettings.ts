@@ -55,6 +55,18 @@ export const siteSettings = defineType({
     }),
     defineField({ name: "insuranceStatement", type: "text", rows: 2 }),
     defineField({
+      name: "heroVideo",
+      title: "Homepage hero loop",
+      type: "object",
+      description:
+        "Muted loop behind the homepage headline. Real footage or a clip made from a real photo (npm run clips:*). 4 MB or less each.",
+      fields: [
+        defineField({ name: "mp4", type: "file", options: { accept: "video/mp4" } }),
+        defineField({ name: "webm", type: "file", options: { accept: "video/webm" } }),
+        defineField({ name: "poster", type: "image" }),
+      ],
+    }),
+    defineField({
       name: "social",
       type: "array",
       of: [

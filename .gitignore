@@ -54,3 +54,7 @@ next-env.d.ts
 /assets/legacy/**/*.png
 /assets/legacy/**/*.webp
 /assets/legacy/**/*.gif
+
+# Runway clips: raw downloads and review copies stay local; plan.json is committed
+/assets/clips/raw/
+/assets/clips/review/

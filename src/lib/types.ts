@@ -99,6 +99,8 @@ export type SiteSettings = {
   insuranceStatement: string | null;
   social: { label: string; url: string | null }[];
   stats: Stat[];
+  /** homepage hero loop; null → the generated placeholder loop */
+  heroVideo?: VideoSource | null;
 };
 
 export type Testimonial = {

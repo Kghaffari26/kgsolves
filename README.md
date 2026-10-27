@@ -132,6 +132,27 @@ Budget: 4 MB or less per file (the placeholder is about 0.6 MB). Install ffmpeg 
 with `winget install Gyan.FFmpeg`. For real footage, trim to a 10–20 s loop and encode with the
 same two codec lines.
 
+## Motion clips from real photos (Runway)
+
+Bring the real project photos to life with short, subtle camera moves made with Runway's
+image-to-video, reviewed before anything goes live.
+
+```powershell
+npm run scrape; npm run legacy:apply   # real photos first (placeholders are refused)
+npm run clips:plan                     # picks photos + prompts → assets/clips/plan.json
+npm run clips:generate                 # dry run: lists clips and estimated cost
+npm run clips:generate -- --yes        # calls Runway; review copies in assets/clips/review/
+# watch each clip; in plan.json set "status": "approved" or "rejected"
+npm run clips:apply                    # encodes approved clips into public/video and wires them in
+```
+
+Needs `RUNWAYML_API_SECRET` in `.env.local` (Runway bills per second of video; the dry run
+prints an estimate) and ffmpeg. Each clip becomes a seamless ping-pong loop (MP4 + WebM ≤ 4 MB,
+plus a poster frame) and lands in the homepage hero, a case-study hero or a project card's hover
+preview. Prompts ask for camera movement and light only; generative video can still invent
+details, which is why nothing publishes without approval. One photo used in several places is
+generated once.
+
 ## Design and motion notes
 
 - **Look:** follows the Armstrong Cal Builders redesign's styling: Instrument Serif display over

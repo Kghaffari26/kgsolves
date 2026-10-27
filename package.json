@@ -18,7 +18,10 @@
     "legacy:apply": "tsx scripts/apply-legacy-assets.ts",
     "placeholders": "tsx scripts/make-placeholders.ts",
     "video:hero": "tsx scripts/make-hero-video.ts",
-    "seed:sanity": "tsx scripts/seed-sanity.ts"
+    "seed:sanity": "tsx scripts/seed-sanity.ts",
+    "clips:plan": "tsx scripts/clips.ts plan",
+    "clips:generate": "tsx scripts/clips.ts generate",
+    "clips:apply": "tsx scripts/clips.ts apply"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.2",
