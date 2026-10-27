@@ -73,7 +73,7 @@ export function HeroVideo({ mp4, webm }: { mp4: string; webm?: string }) {
             v.pause();
           }
         }}
-        className="absolute right-[var(--gutter)] bottom-8 z-20 inline-flex min-h-11 items-center gap-2 rounded-full border border-paper/30 px-4 text-small text-paper/90 backdrop-blur-sm transition-colors hover:border-paper"
+        className="absolute right-[var(--gutter)] bottom-8 z-20 inline-flex min-h-11 items-center gap-2 border border-paper/30 px-4 text-small text-paper/90 backdrop-blur-sm transition-colors hover:border-paper"
         aria-label={userPaused ? "Play background video" : "Pause background video"}
       >
         <svg aria-hidden viewBox="0 0 12 12" className="size-3" fill="currentColor">

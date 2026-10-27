@@ -7,8 +7,8 @@ import type { NextRequest } from "next/server";
 export const runtime = "nodejs";
 
 const fonts = Promise.all([
-  readFile(path.join(process.cwd(), "src/assets/fonts/Fraunces-Regular.ttf")),
-  readFile(path.join(process.cwd(), "src/assets/fonts/InterTight-Medium.ttf")),
+  readFile(path.join(process.cwd(), "src/assets/fonts/InstrumentSerif-Regular.ttf")),
+  readFile(path.join(process.cwd(), "src/assets/fonts/DMSans-Medium.ttf")),
 ]);
 
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -67,8 +67,8 @@ export async function GET(req: NextRequest) {
         height: "100%",
         display: "flex",
         position: "relative",
-        background: "#0F1B2D",
-        fontFamily: "Inter Tight",
+        background: "#171917",
+        fontFamily: "DM Sans",
       }}
     >
       {image && (
@@ -95,7 +95,7 @@ export async function GET(req: NextRequest) {
           left: 0,
           display: "flex",
           background:
-            "linear-gradient(180deg, rgba(15,27,45,0.55) 0%, rgba(15,27,45,0.45) 45%, rgba(15,27,45,0.95) 100%)",
+            "linear-gradient(180deg, rgba(23,25,23,0.55) 0%, rgba(23,25,23,0.45) 45%, rgba(23,25,23,0.95) 100%)",
           width: "100%",
           height: "100%",
         }}
@@ -108,7 +108,7 @@ export async function GET(req: NextRequest) {
           justifyContent: "space-between",
           padding: "56px 64px",
           width: "100%",
-          color: "#FAF8F4",
+          color: "#FAF9F6",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: 18 }}>
@@ -120,20 +120,22 @@ export async function GET(req: NextRequest) {
               width: 64,
               height: 64,
               border: "1.5px solid rgba(250,248,244,0.8)",
-              fontFamily: "Fraunces",
+              fontFamily: "Instrument Serif",
               fontSize: 26,
             }}
           >
             JMK
           </div>
-          <div style={{ display: "flex", fontFamily: "Fraunces", fontSize: 34 }}>JM Kelley</div>
+          <div style={{ display: "flex", fontFamily: "Instrument Serif", fontSize: 34 }}>
+            JM Kelley
+          </div>
           <div style={{ display: "flex", fontSize: 14, letterSpacing: 4, opacity: 0.8 }}>INC.</div>
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
               display: "flex",
-              fontFamily: "Fraunces",
+              fontFamily: "Instrument Serif",
               fontSize: title.length > 40 ? 64 : 84,
               lineHeight: 1.02,
               letterSpacing: -1.5,
@@ -156,7 +158,7 @@ export async function GET(req: NextRequest) {
                 display: "flex",
                 width: 40,
                 height: 1,
-                background: "#D39A62",
+                background: "#B9A894",
                 marginRight: 16,
                 marginTop: 11,
               }}
@@ -170,8 +172,8 @@ export async function GET(req: NextRequest) {
       width: 1200,
       height: 630,
       fonts: [
-        { name: "Fraunces", data: fraunces, weight: 400 },
-        { name: "Inter Tight", data: inter, weight: 500 },
+        { name: "Instrument Serif", data: fraunces, weight: 400 },
+        { name: "DM Sans", data: inter, weight: 500 },
       ],
       headers: {
         "cache-control": "public, max-age=86400, s-maxage=604800, stale-while-revalidate=86400",

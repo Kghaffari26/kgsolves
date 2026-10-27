@@ -1,43 +1,49 @@
 @import "tailwindcss";
 
 /* ---------------------------------------------------------------------------
-   "Raw to refined" design tokens.
+   Design tokens: a quiet, architectural palette (near-black, warm off-white,
+   stone greys) with a single muted taupe accent. Square corners everywhere.
    Raw palette first, then semantic roles that sections can re-map
    (.theme-dark, .theme-stone). Tailwind reads them through @theme below,
    so `bg-ink`, `text-fg`, `border-rule` etc. all resolve to these variables.
+   (Variable names predate the palette: "timber" is the accent, "limestone" the
+   stone ground.)
 --------------------------------------------------------------------------- */
 :root {
-  --ink: #0f1b2d;
-  --ink-2: #16253b;
-  --limestone: #e9e2d6;
-  --sand: #cdbfa8;
-  --timber: #b5793f;
-  /* timber darkened for text on light grounds (5.3:1 on paper) */
-  --timber-deep: #8a5527;
-  /* timber lifted for text on ink (6.4:1) */
-  --timber-light: #d39a62;
-  --paper: #faf8f4;
-  --charcoal: #2a2a2a;
-  --line: rgba(15, 27, 45, 0.12);
+  --ink: #171917;
+  --ink-2: #252724;
+  --limestone: #ece8e0;
+  --sand: #d6d0c5;
+  /* the accent: muted taupe, used sparingly */
+  --timber: #756452;
+  /* accent for text on light grounds (5.5:1 on paper) */
+  --timber-deep: #756452;
+  /* accent lifted for text on near-black (7.6:1) */
+  --timber-light: #b9a894;
+  --paper: #faf9f6;
+  --charcoal: #252724;
+  --line: #e4dfd6;
 
   /* semantic (light default) */
   --bg: var(--paper);
   --fg: var(--charcoal);
   --fg-strong: var(--ink);
-  --fg-muted: #5b6270;
+  --fg-muted: #5d5f59;
   --rule: var(--line);
   --accent: var(--timber);
   --accent-text: var(--timber-deep);
   --surface: #ffffff;
   --focus: var(--timber-deep);
+  /* text colour on an accent fill */
+  --on-accent: var(--paper);
 
   /* layout */
   --max-w: 90rem; /* 1440 */
-  --gutter: clamp(1.25rem, 0.6rem + 3vw, 3.5rem);
-  --grid-gap: clamp(1rem, 0.5rem + 1.5vw, 2rem);
-  --section-y: clamp(5rem, 2.5rem + 8vw, 12.5rem); /* 80 → 200px */
-  --section-y-sm: clamp(3.5rem, 2rem + 5vw, 7.5rem);
-  --header-h: 4.5rem;
+  --gutter: clamp(1.25rem, 0.4rem + 3vw, 2.5rem);
+  --grid-gap: 1.5rem;
+  --section-y: clamp(5.5rem, 3rem + 6.5vw, 9.5rem); /* 88 → 152px */
+  --section-y-sm: clamp(3.5rem, 2rem + 4.5vw, 7rem);
+  --header-h: 5.3125rem; /* 85px */
 
   /* motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
@@ -47,26 +53,28 @@
   --dur-slow: 900ms;
 }
 
-/* Dark section variant: ink ground, paper type, lifted timber. */
+/* Dark section variant: near-black ground, off-white type, lifted taupe. */
 .theme-dark {
   --bg: var(--ink);
-  --fg: #d8d3ca;
+  --fg: #d6d0c5;
   --fg-strong: var(--paper);
-  --fg-muted: #a3abb8;
-  --rule: rgba(250, 248, 244, 0.16);
+  --fg-muted: #a69e91;
+  --rule: rgba(250, 249, 246, 0.16);
   --accent: var(--timber-light);
   --accent-text: var(--timber-light);
   --surface: var(--ink-2);
   --focus: var(--timber-light);
+  --on-accent: var(--ink);
 }
 
-/* Warm neutral section variant. */
+/* Stone section variant. */
 .theme-stone {
   --bg: var(--limestone);
   --fg: var(--charcoal);
   --fg-strong: var(--ink);
-  --fg-muted: #555b66;
-  --rule: rgba(15, 27, 45, 0.16);
+  --fg-muted: #565851;
+  --rule: #d6d0c5;
+  --accent-text: #6b5a49;
   --surface: var(--paper);
 }
 
@@ -97,37 +105,37 @@
   --color-accent-text: var(--accent-text);
   --color-surface: var(--surface);
 
-  --font-display: var(--font-fraunces), "Iowan Old Style", Georgia, serif;
-  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-display-face), Georgia, "Times New Roman", serif;
+  --font-sans: var(--font-sans-face), ui-sans-serif, system-ui, sans-serif;
 
   --ease-out-expo: var(--ease-out);
 }
 
 @theme {
-  /* Fluid type scale. Display tops out at 9rem on wide desktops. */
+  /* Fluid type scale. Instrument Serif is condensed, so display can run large (9rem). */
   --text-display: clamp(3.25rem, 1.2rem + 8vw, 9rem);
-  --text-display--line-height: 0.94;
-  --text-display--letter-spacing: -0.025em;
-  --text-h1: clamp(2.75rem, 1.5rem + 4.8vw, 6.5rem);
-  --text-h1--line-height: 0.98;
+  --text-display--line-height: 0.95;
+  --text-display--letter-spacing: -0.02em;
+  --text-h1: clamp(2.75rem, 1.6rem + 4.4vw, 6rem);
+  --text-h1--line-height: 1;
   --text-h1--letter-spacing: -0.02em;
-  --text-h2: clamp(2.25rem, 1.4rem + 3.2vw, 4.5rem);
-  --text-h2--line-height: 1.02;
-  --text-h2--letter-spacing: -0.018em;
-  --text-h3: clamp(1.625rem, 1.25rem + 1.4vw, 2.5rem);
+  --text-h2: clamp(2.25rem, 1.5rem + 2.6vw, 3.75rem);
+  --text-h2--line-height: 1.04;
+  --text-h2--letter-spacing: -0.015em;
+  --text-h3: clamp(1.75rem, 1.4rem + 1.2vw, 2.5rem);
   --text-h3--line-height: 1.1;
   --text-h3--letter-spacing: -0.01em;
-  --text-h4: clamp(1.25rem, 1.1rem + 0.6vw, 1.625rem);
+  --text-h4: clamp(1.375rem, 1.2rem + 0.6vw, 1.75rem);
   --text-h4--line-height: 1.2;
-  --text-lead: clamp(1.125rem, 1rem + 0.5vw, 1.5rem);
-  --text-lead--line-height: 1.5;
-  --text-body: 1.0625rem;
-  --text-body--line-height: 1.65;
+  --text-lead: clamp(1.0625rem, 0.98rem + 0.35vw, 1.3125rem);
+  --text-lead--line-height: 1.6;
+  --text-body: 1rem;
+  --text-body--line-height: 1.75;
   --text-small: 0.875rem;
-  --text-small--line-height: 1.5;
-  --text-eyebrow: 0.75rem;
+  --text-small--line-height: 1.55;
+  --text-eyebrow: 0.71875rem;
   --text-eyebrow--line-height: 1.2;
-  --text-eyebrow--letter-spacing: 0.18em;
+  --text-eyebrow--letter-spacing: 0.14em;
 
   --breakpoint-3xl: 112rem;
 }
@@ -144,7 +152,7 @@
     color: var(--fg);
     font-family: var(--font-sans);
     font-size: var(--text-body);
-    line-height: 1.65;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -155,7 +163,6 @@
     color: var(--fg-strong);
     font-family: var(--font-display);
     font-weight: 400;
-    font-optical-sizing: auto;
     text-wrap: balance;
   }
   p {
@@ -168,7 +175,6 @@
   :focus-visible {
     outline: 2px solid var(--focus);
     outline-offset: 3px;
-    border-radius: 2px;
   }
   /* Respect the OS setting everywhere, including third-party CSS animations. */
   @media (prefers-reduced-motion: reduce) {
@@ -215,7 +221,7 @@
   .eyebrow {
     font-family: var(--font-sans);
     font-size: var(--text-eyebrow);
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
     font-weight: 500;
   }
@@ -230,6 +236,18 @@
   .link-underline:hover,
   .link-underline:focus-visible {
     background-size: 100% 1px;
+  }
+  /* Standalone text links: underlined at rest, the rule retracts on hover. */
+  .link-retract {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 100% 100%;
+    background-repeat: no-repeat;
+    transition: background-size var(--dur) var(--ease-out);
+  }
+  .link-retract:hover,
+  .link-retract:focus-visible {
+    background-size: 0% 1px;
   }
   .prose-site p + p {
     margin-top: 1.1em;
@@ -340,6 +358,7 @@ html:has([data-header-overlay]) .site-header[data-top="true"] {
   --bg: var(--ink);
   --accent: var(--timber-light);
   --focus: var(--timber-light);
+  --on-accent: var(--ink);
 }
 
 /* ---- Mobile menu ------------------------------------------------------- */

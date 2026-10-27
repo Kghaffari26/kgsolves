@@ -16,15 +16,15 @@ export const metadata: Metadata = {
 };
 
 const colors = [
-  ["--ink", "#0F1B2D", "Primary dark. Existing brand navy."],
-  ["--limestone", "#E9E2D6", "Warm neutral."],
-  ["--sand", "#CDBFA8", "Secondary neutral."],
-  ["--timber", "#B5793F", "The single accent (Douglas fir). Decorative only."],
-  ["--timber-deep", "#8A5527", "Timber for text on light grounds (AA)."],
-  ["--timber-light", "#D39A62", "Timber for text on ink (AA)."],
-  ["--paper", "#FAF8F4", "Page background."],
-  ["--charcoal", "#2A2A2A", "Body text."],
-  ["--line", "rgba(15,27,45,0.12)", "Rules and borders."],
+  ["--ink", "#171917", "Near-black: headings, dark sections."],
+  ["--limestone", "#ECE8E0", "Stone ground for alternate sections."],
+  ["--sand", "#D6D0C5", "Image backdrops, secondary neutral."],
+  ["--timber", "#756452", "The single accent (muted taupe). Use sparingly."],
+  ["--timber-deep", "#756452", "Accent for text on light grounds (AA)."],
+  ["--timber-light", "#B9A894", "Accent for text on near-black (AA)."],
+  ["--paper", "#FAF9F6", "Page background."],
+  ["--charcoal", "#252724", "Body text."],
+  ["--line", "#E4DFD6", "Rules and borders."],
 ];
 
 const type = [
@@ -92,7 +92,8 @@ export default function StyleguidePage() {
         <Container>
           <Heading size="h3">Type</Heading>
           <p className="mt-3 text-fg-muted">
-            Fraunces (display, optical sizing) and Inter Tight (body/UI). Fluid clamp() sizes.
+            Instrument Serif (display) and DM Sans (body/UI). Fluid clamp() sizes. Square corners
+            throughout.
           </p>
           <div className="mt-10 space-y-8">
             {type.map(([name, cls, sample]) => (

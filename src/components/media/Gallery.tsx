@@ -132,7 +132,7 @@ export function Gallery({ images, title }: { images: ImageAsset[]; title: string
             <button
               type="button"
               onClick={() => step(-1)}
-              className="inline-flex size-12 items-center justify-center rounded-full border border-rule text-fg-strong hover:border-fg-strong"
+              className="inline-flex size-12 items-center justify-center border border-rule text-fg-strong hover:border-fg-strong"
               aria-label="Previous image"
             >
               <svg
@@ -149,7 +149,7 @@ export function Gallery({ images, title }: { images: ImageAsset[]; title: string
             <button
               type="button"
               onClick={() => step(1)}
-              className="inline-flex size-12 items-center justify-center rounded-full border border-rule text-fg-strong hover:border-fg-strong"
+              className="inline-flex size-12 items-center justify-center border border-rule text-fg-strong hover:border-fg-strong"
               aria-label="Next image"
             >
               <svg

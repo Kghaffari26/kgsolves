@@ -20,7 +20,7 @@ export function Todo({
   return (
     <Tag
       className={cn(
-        "rounded-sm border border-dashed border-current/40 px-2 py-0.5 font-sans text-small text-fg-muted not-italic",
+        "border border-dashed border-current/40 px-2 py-0.5 font-sans text-small text-fg-muted not-italic",
         block ? "block p-4" : "inline-block align-middle",
         className,
       )}

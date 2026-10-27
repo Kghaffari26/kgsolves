@@ -47,7 +47,7 @@ export function VideoEmbed({ video, poster }: { video: VideoEmbedSource; poster?
               unoptimized
             />
           )}
-          <span className="relative flex size-20 items-center justify-center rounded-full bg-paper text-ink transition-transform duration-300 group-hover:scale-110">
+          <span className="relative flex size-20 items-center justify-center bg-paper text-ink transition-transform duration-300 group-hover:scale-110">
             <svg aria-hidden viewBox="0 0 12 12" className="ml-1 size-5" fill="currentColor">
               <path d="M2 1l9 5-9 5z" />
             </svg>

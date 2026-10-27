@@ -1,9 +1,8 @@
-Fraunces — Copyright 2020 The Fraunces Project Authors (https://github.com/undercasetype/Fraunces)
-Inter Tight — Copyright 2022 The Inter Project Authors (https://github.com/rsms/inter)
+Instrument Serif — Copyright 2022 The Instrument Serif Project Authors (https://github.com/Instrument/instrument-serif)
+DM Sans — Copyright 2014 The DM Sans Project Authors (https://github.com/googlefonts/dm-fonts)
 
 These fonts are licensed under the SIL Open Font License, Version 1.1.
 Full license text: https://openfontlicense.org/open-font-license-official-text/
 
-Fraunces-400-opsz-latin.woff2 is a modified version (instanced to weight 400 and subset to
-Latin) for web delivery. Fraunces-Regular.ttf and InterTight-Medium.ttf are unmodified static
-instances used to render Open Graph images and the favicon.
+InstrumentSerif-Regular.ttf and DMSans-Medium.ttf are unmodified static instances used to render
+Open Graph images and the favicon. The site itself loads both families through next/font.

@@ -145,7 +145,7 @@ export function Header({ phone }: { phone: string }) {
               className="link-underline hidden text-[0.9375rem] tabular-nums md:inline"
             />
             <span className="header-cta hidden sm:inline-flex">
-              <Button href="/contact" className="min-h-11 px-5">
+              <Button href="/contact" variant="ghost">
                 Start a project
               </Button>
             </span>

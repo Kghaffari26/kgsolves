@@ -42,7 +42,7 @@ export function ProcessTeaser() {
               >
                 <span
                   aria-hidden
-                  className="absolute top-0 left-0 hidden size-3.5 rounded-full border border-fg-strong bg-bg md:block"
+                  className="absolute top-0 left-0 hidden size-3.5 border border-fg-strong bg-bg md:block"
                 />
                 <p className="eyebrow text-accent-text tabular-nums">
                   {String(i + 1).padStart(2, "0")}

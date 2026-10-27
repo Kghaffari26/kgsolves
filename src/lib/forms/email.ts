@@ -24,9 +24,9 @@ function table(rows: [string, string][]) {
 }
 
 function wrap(title: string, body: string) {
-  return `<!doctype html><html><body style="margin:0;background:#FAF8F4;padding:32px"><div style="max-width:640px;margin:auto;background:#fff;padding:32px;border:1px solid #E9E2D6">
-<p style="font:12px Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#8A5527;margin:0 0 8px">JM Kelley Inc.</p>
-<h1 style="font:400 26px Georgia,serif;color:#0F1B2D;margin:0 0 24px">${esc(title)}</h1>${body}</div></body></html>`;
+  return `<!doctype html><html><body style="margin:0;background:#FAF9F6;padding:32px"><div style="max-width:640px;margin:auto;background:#fff;padding:32px;border:1px solid #E9E2D6">
+<p style="font:12px Helvetica,Arial,sans-serif;letter-spacing:.18em;text-transform:uppercase;color:#756452;margin:0 0 8px">JM Kelley Inc.</p>
+<h1 style="font:400 26px Georgia,serif;color:#171917;margin:0 0 24px">${esc(title)}</h1>${body}</div></body></html>`;
 }
 
 const toText = (rows: [string, string][]) => rows.map(([k, v]) => `${k}: ${v}`).join("\n");
@@ -103,7 +103,7 @@ export function planUploadLead(d: PlanUploadData, uploadsEnabled: boolean): Lead
     ]) +
       (uploadsEnabled
         ? ""
-        : `<p style="font:14px Helvetica,Arial,sans-serif;color:#8A5527;margin-top:24px">File storage isn't configured (BLOB_READ_WRITE_TOKEN), so files were not uploaded. Ask the sender to email them.</p>`),
+        : `<p style="font:14px Helvetica,Arial,sans-serif;color:#756452;margin-top:24px">File storage isn't configured (BLOB_READ_WRITE_TOKEN), so files were not uploaded. Ask the sender to email them.</p>`),
   );
   return {
     kind: "plan_upload",

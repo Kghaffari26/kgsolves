@@ -24,7 +24,7 @@ export function VideoHero({ poster }: { poster: ImageAsset }) {
         <HeroVideo mp4="/video/hero-placeholder.mp4" webm="/video/hero-placeholder.webm" />
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,27,45,0.6)_0%,rgba(15,27,45,0.35)_30%,rgba(15,27,45,0.5)_60%,rgba(15,27,45,0.92)_100%)]"
+          className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,25,23,0.6)_0%,rgba(23,25,23,0.35)_30%,rgba(23,25,23,0.5)_60%,rgba(23,25,23,0.92)_100%)]"
         />
         <div className="absolute top-[calc(var(--header-h)+1.5rem)] right-[var(--gutter)] flex flex-col items-end gap-4 text-paper/60">
           <Monogram className="size-12" />

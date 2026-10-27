@@ -134,8 +134,10 @@ same two codec lines.
 
 ## Design and motion notes
 
-- **Fonts:** Fraunces for display (its optical-size axis keeps hairlines crisp at 9rem and sturdy
-  at 20px; self-hosted as a weight-400 instance, 34 KB) and Inter Tight for body/UI.
+- **Look:** follows the Armstrong Cal Builders redesign's styling: Instrument Serif display over
+  DM Sans body, near-black `#171917` on warm off-white `#FAF9F6`, stone greys, one muted taupe
+  accent `#756452`, small letter-spaced labels, hairline rules and **square corners everywhere**
+  (buttons are either solid or a 1px outline).
 - **Tokens:** CSS variables in `src/app/globals.css`, exposed to Tailwind through `@theme`
   (Tailwind v4 has no `tailwind.config.js`). Sections switch palette with `.theme-dark` /
   `.theme-stone`.

@@ -125,7 +125,7 @@ export default async function ProjectPage({ params }: PageProps<"/work/[slug]">)
         )}
         <div
           aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(15,27,45,0.5)_0%,rgba(15,27,45,0.25)_40%,rgba(15,27,45,0.88)_100%)]"
+          className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(23,25,23,0.5)_0%,rgba(23,25,23,0.25)_40%,rgba(23,25,23,0.88)_100%)]"
         />
         <Container className="pb-16 md:pb-20">
           <nav aria-label="Breadcrumb" className="text-small text-paper/75">

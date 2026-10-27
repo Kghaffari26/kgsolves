@@ -16,16 +16,16 @@ type AsButton = Common & { href?: undefined } & Omit<
   >;
 
 const base =
-  "group/btn inline-flex items-center justify-center gap-3 font-sans text-[0.9375rem] font-medium leading-none transition-[color,border-color] duration-500 ease-[var(--ease-out)] disabled:opacity-50 disabled:pointer-events-none";
+  "group/btn inline-flex items-center justify-center gap-3 font-sans text-[0.875rem] font-medium leading-none transition-[color,border-color] duration-500 ease-[var(--ease-out)] disabled:opacity-50 disabled:pointer-events-none";
 
 // Primary and ghost fill with a wipe from the bottom edge (see .btn-wipe in globals.css);
 // the label rolls up to a fresh copy of itself.
 const variants: Record<Variant, string> = {
   primary:
-    "btn-wipe min-h-12 rounded-full bg-fg-strong px-7 text-bg [--wipe:var(--accent)] hover:text-ink",
+    "btn-wipe min-h-11 border border-fg-strong bg-fg-strong px-5 text-bg [--wipe:var(--accent)] hover:border-accent hover:text-[var(--on-accent)]",
   ghost:
-    "btn-wipe min-h-12 rounded-full border border-current/35 px-7 text-fg-strong [--wipe:var(--fg-strong)] hover:border-fg-strong hover:text-bg",
-  text: "min-h-11 px-0 text-fg-strong link-underline pb-1 rounded-none",
+    "btn-wipe min-h-11 border border-current px-5 text-fg-strong [--wipe:var(--fg-strong)] hover:border-fg-strong hover:text-bg",
+  text: "min-h-11 px-0 text-fg-strong link-retract pb-1",
 };
 
 function Arrow() {

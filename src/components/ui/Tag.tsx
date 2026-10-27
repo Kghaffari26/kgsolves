@@ -8,7 +8,7 @@ export function Tag({ active, className, ...rest }: Props) {
   return (
     <span
       className={cn(
-        "inline-flex items-center rounded-full border px-3 py-1 text-small leading-none",
+        "inline-flex items-center border px-3 py-1 text-small leading-none",
         active ? "border-fg-strong bg-fg-strong text-bg" : "border-rule text-fg",
         className,
       )}
@@ -27,7 +27,7 @@ export function Chip({
       type="button"
       aria-pressed={active}
       className={cn(
-        "inline-flex min-h-11 items-center rounded-full border px-4 text-small transition-colors duration-200",
+        "inline-flex min-h-11 items-center border px-4 text-small transition-colors duration-200",
         active
           ? "border-fg-strong bg-fg-strong text-bg"
           : "border-rule text-fg hover:border-fg-strong",

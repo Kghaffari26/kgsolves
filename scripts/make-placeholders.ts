@@ -48,10 +48,10 @@ function esc(s: string) {
 
 function finishedSvg(w: number, h: number, seed: number, label: string) {
   const palettes = [
-    ["#E9E2D6", "#CDBFA8", "#0F1B2D"],
-    ["#DCE3E6", "#B9C4C9", "#0F1B2D"],
-    ["#EFE7DA", "#D9C7AA", "#1B2A3F"],
-    ["#E4DED3", "#C4B59C", "#14233A"],
+    ["#ECE8E0", "#D6D0C5", "#171917"],
+    ["#E4E2DC", "#C9C4BA", "#171917"],
+    ["#F0ECE4", "#D3CAB9", "#252724"],
+    ["#E6E1D8", "#C2B8A6", "#2B2D29"],
   ];
   const [sky, ground, ink] = palettes[seed % palettes.length];
   const gy = h * (0.68 + ((seed >> 3) % 8) / 100);
@@ -80,23 +80,23 @@ function finishedSvg(w: number, h: number, seed: number, label: string) {
   const fs = Math.round(Math.max(18, w / 60));
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
   <defs>
-    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sky}"/><stop offset="1" stop-color="#FAF8F4"/></linearGradient>
+    <linearGradient id="s" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${sky}"/><stop offset="1" stop-color="#FAF9F6"/></linearGradient>
     <linearGradient id="g" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${ground}"/><stop offset="1" stop-color="${ink}" stop-opacity="0.55"/></linearGradient>
   </defs>
   <rect width="${w}" height="${h}" fill="url(#s)"/>
-  <circle cx="${w * 0.8}" cy="${h * 0.22}" r="${h * 0.07}" fill="#B5793F" fill-opacity="0.18"/>
-  <rect x="${hx}" y="${top}" width="${hw}" height="${gy - top}" fill="#FAF8F4" fill-opacity="0.75" stroke="${ink}" stroke-width="${stroke}"/>
+  <circle cx="${w * 0.8}" cy="${h * 0.22}" r="${h * 0.07}" fill="#756452" fill-opacity="0.18"/>
+  <rect x="${hx}" y="${top}" width="${hw}" height="${gy - top}" fill="#FAF9F6" fill-opacity="0.75" stroke="${ink}" stroke-width="${stroke}"/>
   ${windows.join("")}
   ${roof}
   <rect y="${gy}" width="${w}" height="${h - gy}" fill="url(#g)"/>
   <line x1="0" y1="${gy}" x2="${w}" y2="${gy}" stroke="${ink}" stroke-width="${stroke}"/>
-  <text x="${w * 0.04}" y="${h - h * 0.05}" font-family="Helvetica, Arial, sans-serif" font-size="${fs}" fill="#FAF8F4" letter-spacing="${fs * 0.15}">PHOTO PENDING · ${esc(label.toUpperCase())}</text>
+  <text x="${w * 0.04}" y="${h - h * 0.05}" font-family="Helvetica, Arial, sans-serif" font-size="${fs}" fill="#FAF9F6" letter-spacing="${fs * 0.15}">PHOTO PENDING · ${esc(label.toUpperCase())}</text>
 </svg>`;
 }
 
 function jobsiteSvg(w: number, h: number, seed: number, label: string) {
-  const ink = "#0F1B2D";
-  const timber = "#B5793F";
+  const ink = "#171917";
+  const timber = "#756452";
   const gy = h * 0.78;
   const stroke = Math.max(2, w / 600);
   const grid: string[] = [];
@@ -114,7 +114,7 @@ function jobsiteSvg(w: number, h: number, seed: number, label: string) {
   }
   const fs = Math.round(Math.max(18, w / 60));
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}">
-  <rect width="${w}" height="${h}" fill="#E9E2D6"/>
+  <rect width="${w}" height="${h}" fill="#ECE8E0"/>
   <g stroke="${ink}" stroke-opacity="0.07" stroke-width="1">${grid.join("")}</g>
   <rect x="0" y="${gy}" width="${w}" height="${h - gy}" fill="#A9A49B"/>
   <g stroke="${timber}" stroke-width="${stroke * 2.2}">${studs.join("")}

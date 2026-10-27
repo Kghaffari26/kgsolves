@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { fraunces, interTight } from "@/lib/fonts";
+import { dmSans, instrumentSerif } from "@/lib/fonts";
 import { siteUrl } from "@/lib/env";
 import "./globals.css";
 
@@ -14,12 +14,12 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0F1B2D",
+  themeColor: "#171917",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en-US" className={`${fraunces.variable} ${interTight.variable}`}>
+    <html lang="en-US" className={`${instrumentSerif.variable} ${dmSans.variable}`}>
       <body>{children}</body>
     </html>
   );

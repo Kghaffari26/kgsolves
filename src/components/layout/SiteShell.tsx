@@ -15,7 +15,7 @@ export async function SiteShell({ children }: { children: React.ReactNode }) {
       <JsonLd data={organizationLd(settings)} />
       <a
         href="#main"
-        className="fixed top-3 left-3 z-[70] -translate-y-24 rounded-full bg-ink px-5 py-3 text-paper transition-transform focus:translate-y-0"
+        className="fixed top-3 left-3 z-[70] -translate-y-24 bg-ink px-5 py-3 text-paper transition-transform focus:translate-y-0"
       >
         Skip to content
       </a>

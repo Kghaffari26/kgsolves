@@ -28,7 +28,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
           <button
             type="button"
             onClick={() => go(-1)}
-            className="inline-flex size-12 items-center justify-center rounded-full border border-rule hover:border-fg-strong"
+            className="inline-flex size-12 items-center justify-center border border-rule hover:border-fg-strong"
             aria-label="Previous testimonial"
           >
             <svg
@@ -44,7 +44,7 @@ export function TestimonialCarousel({ items }: { items: Testimonial[] }) {
           <button
             type="button"
             onClick={() => go(1)}
-            className="inline-flex size-12 items-center justify-center rounded-full border border-rule hover:border-fg-strong"
+            className="inline-flex size-12 items-center justify-center border border-rule hover:border-fg-strong"
             aria-label="Next testimonial"
           >
             <svg

@@ -38,10 +38,10 @@ export function BeforeAfter({
             className="object-cover"
           />
         </div>
-        <span className="eyebrow absolute top-4 left-4 rounded-full bg-ink/70 px-3 py-1.5 text-paper">
+        <span className="eyebrow absolute top-4 left-4 bg-ink/70 px-3 py-1.5 text-paper">
           Framing
         </span>
-        <span className="eyebrow absolute top-4 right-4 rounded-full bg-ink/70 px-3 py-1.5 text-paper">
+        <span className="eyebrow absolute top-4 right-4 bg-ink/70 px-3 py-1.5 text-paper">
           Finished
         </span>
         <div
@@ -49,7 +49,7 @@ export function BeforeAfter({
           className="pointer-events-none absolute inset-y-0 w-px bg-paper"
           style={{ left: `${pos}%` }}
         >
-          <span className="absolute top-1/2 left-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-paper text-ink shadow-lg">
+          <span className="absolute top-1/2 left-1/2 flex size-12 -translate-x-1/2 -translate-y-1/2 items-center justify-center bg-paper text-ink shadow-lg">
             <svg
               viewBox="0 0 24 24"
               className="size-5"
