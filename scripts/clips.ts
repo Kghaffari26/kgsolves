@@ -3,7 +3,7 @@
  *
  *   npm run clips:plan                 # pick photos + prompts → assets/clips/plan.json
  *   npm run clips:generate             # dry run: lists clips and the estimated cost
- *   npm run clips:generate -- --yes    # calls Runway, saves review copies to assets/clips/review/
+ *   npm run clips:generate:confirm     # calls Runway, saves review copies to assets/clips/review/
  *   (watch each review clip; in plan.json set "status": "approved" or "rejected")
  *   npm run clips:apply                # encodes approved clips into /public/video and wires them in
  *
@@ -201,7 +201,7 @@ async function generate(yes: boolean, only?: string) {
   todo.forEach((c) =>
     console.log(`  - ${c.id}  ←  ${c.image}  (used for: ${c.targets.join(", ")})`),
   );
-  if (!yes) return void console.log("\nDry run. Re-run with --yes to generate.");
+  if (!yes) return void console.log("\nDry run. Run npm run clips:generate:confirm to generate.");
 
   for (const c of todo) {
     try {

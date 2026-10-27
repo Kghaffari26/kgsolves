@@ -141,7 +141,7 @@ image-to-video, reviewed before anything goes live.
 npm run scrape; npm run legacy:apply   # real photos first (placeholders are refused)
 npm run clips:plan                     # picks photos + prompts → assets/clips/plan.json
 npm run clips:generate                 # dry run: lists clips and estimated cost
-npm run clips:generate -- --yes        # calls Runway; review copies in assets/clips/review/
+npm run clips:generate:confirm         # calls Runway; review copies in assets/clips/review/
 # watch each clip; in plan.json set "status": "approved" or "rejected"
 npm run clips:apply                    # encodes approved clips into public/video and wires them in
 ```

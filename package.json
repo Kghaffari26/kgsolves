@@ -21,7 +21,8 @@
     "seed:sanity": "tsx scripts/seed-sanity.ts",
     "clips:plan": "tsx scripts/clips.ts plan",
     "clips:generate": "tsx scripts/clips.ts generate",
-    "clips:apply": "tsx scripts/clips.ts apply"
+    "clips:apply": "tsx scripts/clips.ts apply",
+    "clips:generate:confirm": "tsx scripts/clips.ts generate --yes"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.2",
