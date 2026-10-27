@@ -23,7 +23,8 @@
     "clips:generate": "tsx scripts/clips.ts generate",
     "clips:apply": "tsx scripts/clips.ts apply",
     "clips:generate:confirm": "tsx scripts/clips.ts generate --yes",
-    "legacy:apply:confirm": "tsx scripts/apply-legacy-assets.ts --confirm"
+    "legacy:apply:confirm": "tsx scripts/apply-legacy-assets.ts --confirm",
+    "clips:test": "tsx scripts/clips.ts generate --yes --only home-hero"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.9.2",

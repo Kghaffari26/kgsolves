@@ -247,11 +247,28 @@ async function generate(yes: boolean, only?: string) {
     } catch (err) {
       c.error = (err as Error).message;
       console.error(`  ✗ ${c.id}: ${c.error}`);
+      // Account-level problems (no credits, bad key, rate limit) will fail every clip the same
+      // way: stop instead of submitting the rest.
+      if (/credits|unauthori[sz]ed|invalid api key|Runway 40[13]|Runway 429/i.test(c.error)) {
+        writeJson(PLAN, p);
+        console.error(
+          "\nStopped: this is an account problem, not a clip problem. Fix it (e.g. add API credits at\n" +
+            "dev.runwayml.com → Billing) and run the same command again; finished clips are not redone.",
+        );
+        process.exitCode = 1;
+        return;
+      }
     }
     writeJson(PLAN, p);
   }
+  const made = todo.filter((c) => c.status === "generated").length;
+  if (!made) {
+    console.error("\nNo clips were generated. See the errors above.");
+    process.exitCode = 1;
+    return;
+  }
   console.log(
-    '\nWatch each clip in assets/clips/review/. In plan.json set "status" to "approved" or "rejected", then run npm run clips:apply.',
+    `\n${made} of ${todo.length} clip(s) ready. Watch them in assets/clips/review/. In plan.json set "status" to "approved" or "rejected", then run npm run clips:apply.`,
   );
 }
 
