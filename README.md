@@ -102,7 +102,8 @@ The current site's images are hosted on GoDaddy (`img1.wsimg.com`).
 npm run scrape        # → assets/legacy/<page>/, <page>.txt, manifest.json
 # review assets/legacy/manifest.json: each image is "finished" or "jobsite"; fix any wrong
 # ones and set "reviewed": true
-npm run legacy:apply  # → public/images/projects/<slug>/ and src/content/fallback/projects.json
+npm run legacy:apply          # dry run: what goes where, what's skipped, rights warnings
+npm run legacy:apply:confirm  # → public/images/projects/<slug>/, public/images/site/, fallback JSON
 npm run seed:sanity   # optional: push them to Sanity
 ```
 
@@ -138,7 +139,7 @@ Bring the real project photos to life with short, subtle camera moves made with 
 image-to-video, reviewed before anything goes live.
 
 ```powershell
-npm run scrape; npm run legacy:apply   # real photos first (placeholders are refused)
+npm run scrape; npm run legacy:apply:confirm   # real photos first (placeholders are refused)
 npm run clips:plan                     # picks photos + prompts → assets/clips/plan.json
 npm run clips:generate                 # dry run: lists clips and estimated cost
 npm run clips:generate:confirm         # calls Runway; review copies in assets/clips/review/

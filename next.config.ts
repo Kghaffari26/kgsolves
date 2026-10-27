@@ -21,6 +21,8 @@ const nextConfig: NextConfig = {
   // Cache Components is left off on purpose: this is a content site fed by Sanity
   // with tag-based ISR (see src/lib/sanity/fetch.ts and /api/revalidate).
   turbopack: {
+    // Pin the workspace root so a stray lockfile in a parent folder is never picked up.
+    root: process.cwd(),
     rules: {
       "*.css": {
         loaders: ["@tailwindcss/turbopack"],
